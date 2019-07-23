@@ -35,5 +35,5 @@ def qgisMinimumVersion():
 def classFactory(iface):
    
     # load Qad class from file qad
-    from qad import Qad
+    from .qad import Qad
     return Qad(iface)
