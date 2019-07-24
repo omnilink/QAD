@@ -25,11 +25,12 @@
 # Import the PyQt and QGIS libraries
 from qgis.PyQt.QtCore import *
 from qgis.PyQt.QtGui import *
+from qgis.PyQt.QtWidgets import QDialog
 from qgis.core import *
 from qgis.core import QgsApplication
 from qgis.utils import *
 
-import qad.qad_dimstyle_new_ui
+from qad.qad_dimstyle_new_ui import Ui_DimStyle_New_Dialog
 from qad.qad_dimstyle_details_dlg import QadDIMSTYLE_DETAILS_Dialog
 
 from qad.qad_variables import *
@@ -40,7 +41,7 @@ import qad.qad_utils
 
 #######################################################################################
 # Classe che gestisce l'interfaccia grafica della funzione di creazione nuovo stile
-class QadDIMSTYLE_NEW_Dialog(QDialog, QObject, qad_dimstyle_new_ui.Ui_DimStyle_New_Dialog):
+class QadDIMSTYLE_NEW_Dialog(QDialog, QObject, Ui_DimStyle_New_Dialog):
     def __init__(self, plugIn, parent, fromDimStyleName=None):
         self.plugIn = plugIn
         self.iface = self.plugIn.iface.mainWindow()

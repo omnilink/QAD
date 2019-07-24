@@ -31,7 +31,7 @@ from qad.qad_stretch_maptool import *
 from qad.qad_getpoint import *
 from qad.qad_textwindow import *
 from qad.qad_mpolygon_cmd import QadMPOLYGONCommandClass
-from qqad.ad_rectangle_cmd import QadRECTANGLECommandClass
+from qad.qad_rectangle_cmd import QadRECTANGLECommandClass
 from qad.qad_generic_cmd import QadCommandClass
 from qad.qad_msg import QadMsg
 import qad.qad_utils

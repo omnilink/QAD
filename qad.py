@@ -37,13 +37,13 @@ from qad.qad_msg import QadMsg
 import qad.qad_utils
 from qad.qad_maptool import QadMapTool
 from qad.qad_variables import *
-from qad_textwindow import *
-from qad_commands import *
+from qad.qad_textwindow import *
+from qad.qad_commands import *
 from qad.qad_entity import *
-from qad_dim import QadDimStyles
+from qad.qad_dim import QadDimStyles
 from qad.qad_layer import getLayerById, QadLayerStatusEnum, QadLayerStatusListClass
-import qad_undoredo
-from qad_array_cmd import QadARRAYCommandClassSeriesTypeEnum
+import qad.qad_undoredo
+from qad.qad_array_cmd import QadARRAYCommandClassSeriesTypeEnum
 
 
 class Qad(QObject):

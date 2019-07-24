@@ -25,16 +25,17 @@
 # Import the PyQt and QGIS libraries
 from qgis.PyQt.QtCore import *
 from qgis.PyQt.QtGui import *
+from qgis.PyQt.QtWidgets import QDialog, QWidget
 from qgis.core import *
 from qgis.core import QgsApplication
 from qgis.utils import *
 from qgis.gui import *
 
-import qad.qad_windowcolor_ui
+from qad.qad_windowcolor_ui import Ui_WindowColor_Dialog
 
 from qad.qad_variables import *
 from qad.qad_msg import QadMsg, qadShowPluginHelp
-import qad_utils
+import qad.qad_utils
 
 
 # ===============================================================================
@@ -66,7 +67,7 @@ class QadColorElementEnum():
 
 #######################################################################################
 # Classe che gestisce l'interfaccia grafica per i colori di QAD
-class QadWindowColorDialog(QDialog, QObject, qad_windowcolor_ui.Ui_WindowColor_Dialog):
+class QadWindowColorDialog(QDialog, QObject, Ui_WindowColor_Dialog):
     def __init__(self, plugIn, parent, contextEnum=QadColorContextEnum.NONE, elementEnum=QadColorElementEnum.NONE):
         self.plugIn = plugIn
         self.iface = self.plugIn.iface.mainWindow()

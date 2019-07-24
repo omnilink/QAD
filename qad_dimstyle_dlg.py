@@ -25,11 +25,12 @@
 # Import the PyQt and QGIS libraries
 from qgis.PyQt.QtCore import *
 from qgis.PyQt.QtGui import *
+from qgis.PyQt.QtWidgets import QDialog
 from qgis.core import *
 from qgis.core import QgsApplication
 from qgis.utils import *
 
-import qad.qad_dimstyle_ui
+from qad.qad_dimstyle_ui import Ui_DimStyle_Dialog
 
 from qad.qad_variables import *
 from qad.qad_dim import *
@@ -42,7 +43,7 @@ import qad.qad_utils
 
 #######################################################################################
 # Classe che gestisce l'interfaccia grafica del comando DIMSTYLE
-class QadDIMSTYLEDialog(QDialog, QObject, qad_dimstyle_ui.Ui_DimStyle_Dialog):
+class QadDIMSTYLEDialog(QDialog, QObject, Ui_DimStyle_Dialog):
     def __init__(self, plugIn):
         self.plugIn = plugIn
         self.iface = self.plugIn.iface.mainWindow()

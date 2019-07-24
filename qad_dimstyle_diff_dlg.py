@@ -25,11 +25,12 @@
 # Import the PyQt and QGIS libraries
 from qgis.PyQt.QtCore import *
 from qgis.PyQt.QtGui import *
+from qgis.PyQt.QtWidgets import QDialog
 from qgis.core import *
 from qgis.core import QgsApplication
 from qgis.utils import *
 
-import qad.qad_dimstyle_diff_ui
+from qad.qad_dimstyle_diff_ui import Ui_DimStyle_Diff_Dialog
 
 from qad.qad_dim import *
 from qad.qad_msg import QadMsg, qadShowPluginHelp
@@ -38,7 +39,7 @@ import qad.qad_utils
 
 #######################################################################################
 # Classe che gestisce l'interfaccia grafica della funzione di comparazione tra stili di quotatura
-class QadDIMSTYLE_DIFF_Dialog(QDialog, QObject, qad_dimstyle_diff_ui.Ui_DimStyle_Diff_Dialog):
+class QadDIMSTYLE_DIFF_Dialog(QDialog, QObject, Ui_DimStyle_Diff_Dialog):
     def __init__(self, plugIn, parent, dimStyleName1=None, dimStyleName2=None):
         self.plugIn = plugIn
         self.iface = self.plugIn.iface.mainWindow()

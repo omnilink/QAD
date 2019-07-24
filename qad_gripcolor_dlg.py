@@ -25,12 +25,13 @@
 # Import the PyQt and QGIS libraries
 from qgis.PyQt.QtCore import *
 from qgis.PyQt.QtGui import *
+from qgis.PyQt.QtWidgets import QDialog
 from qgis.core import *
 from qgis.core import QgsApplication
 from qgis.utils import *
 from qgis.gui import *
 
-import qad.qad_gripcolor_ui
+from qad.qad_gripcolor_ui import Ui_GripColor_Dialog
 
 from qad.qad_variables import *
 from qad.qad_msg import QadMsg, qadShowPluginHelp
@@ -39,7 +40,7 @@ import qad.qad_utils
 
 #######################################################################################
 # Classe che gestisce l'interfaccia grafica per i colori dei grip
-class QadGripColorDialog(QDialog, QObject, qad_gripcolor_ui.Ui_GripColor_Dialog):
+class QadGripColorDialog(QDialog, QObject, Ui_GripColor_Dialog):
     def __init__(self, plugIn, parent, gripColor, gripHot, gripHover, gripContour):
         self.plugIn = plugIn
         self.iface = self.plugIn.iface.mainWindow()

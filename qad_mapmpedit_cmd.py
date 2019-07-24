@@ -460,7 +460,7 @@ class QadMAPMPEDITCommandClass(QadCommandClass):
         geom = f.geometry()
         result, newGeoms, topologyTestPts = geom.splitGeometry(splitLineTransformed, False)
 
-        if result <> 0 or len(newGeoms) == 0:
+        if result != 0 or len(newGeoms) == 0:
             self.showMsg(QadMsg.translate("QAD", "Invalid object."))
             return False
 

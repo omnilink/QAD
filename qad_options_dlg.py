@@ -25,11 +25,12 @@
 # Import the PyQt and QGIS libraries
 from qgis.PyQt.QtCore import *
 from qgis.PyQt.QtGui import *
+from qgis.PyQt.QtWidgets import QDialog, QWidget
 from qgis.core import *
 from qgis.core import QgsApplication
 from qgis.utils import *
 
-import qad.qad_options_ui
+from qad.qad_options_ui import Ui_Options_Dialog
 
 from qad.qad_variables import *
 from qad.qad_msg import QadMsg, qadShowPluginHelp
@@ -49,7 +50,7 @@ class QadOPTIONSTabIndexEnum():
 
 #######################################################################################
 # Classe che gestisce l'interfaccia grafica del comando OPTIONS
-class QadOPTIONSDialog(QDialog, QObject, qad_options_ui.Ui_Options_Dialog):
+class QadOPTIONSDialog(QDialog, QObject, Ui_Options_Dialog):
     def __init__(self, plugIn, optionsTabIndex=None):
         self.plugIn = plugIn
         self.iface = self.plugIn.iface.mainWindow()

@@ -25,12 +25,13 @@
 # Import the PyQt and QGIS libraries
 from qgis.PyQt.QtCore import *
 from qgis.PyQt.QtGui import *
+from qgis.PyQt.QtWidgets import QDialog
 from qgis.core import *
 from qgis.core import QgsApplication
 from qgis.utils import *
 from qgis.gui import *
 
-import qad.qad_dimstyle_details_ui
+from qad.qad_dimstyle_details_ui import Ui_DimStyle_Details_Dialog
 
 from qad.qad_variables import *
 from qad.qad_dim import *
@@ -53,7 +54,7 @@ class QadDIMSTYLEDETAILSTabIndexEnum():
 
 #######################################################################################
 # Classe che gestisce l'interfaccia grafica della funzione di creazione nuovo stile
-class QadDIMSTYLE_DETAILS_Dialog(QDialog, QObject, qad_dimstyle_details_ui.Ui_DimStyle_Details_Dialog):
+class QadDIMSTYLE_DETAILS_Dialog(QDialog, QObject, Ui_DimStyle_Details_Dialog):
     def __init__(self, plugIn, parent, dimStyle):
         self.plugIn = plugIn
         self.dimStyle = QadDimStyle(dimStyle)  # copio lo stile di quotatura

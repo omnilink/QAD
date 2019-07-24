@@ -35,7 +35,7 @@ from qad.qad_textwindow import *
 from qad.qad_ssget_cmd import QadSSGetClass
 from qad.qad_entity import *
 from qad.qad_variables import *
-import qad.ad_utils
+import qad.qad_utils
 import qad.qad_layer
 from qad.qad_dim import *
 
