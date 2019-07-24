@@ -64,7 +64,7 @@ class QadLINECommandClass(QadCommandClass):
     def __init__(self, plugIn):
         QadCommandClass.__init__(self, plugIn)
         self.vertices = []
-        self.rubberBand = createRubberBand(self.plugIn.canvas, QGis.Line)
+        self.rubberBand = createRubberBand(self.plugIn.canvas, QgsWkbTypes.LineGeometry)
         self.firstPtTan = None
         self.firstPtPer = None
         # se questo flag = True il comando serve all'interno di un altro comando per disegnare una linea

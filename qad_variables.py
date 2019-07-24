@@ -1031,25 +1031,25 @@ class QadVariablesClass():
             VarType = varValue[sep + 8:sep2]
             varValue = varValue[:sep]
             if VarType == "int":
-                varValue = qad_utils.str2int(varValue)
+                varValue = qad.qad_utils.str2int(varValue)
                 if varValue is None:
                     self.set(VarName, int(0))
                 else:
                     self.set(VarName, varValue)
             elif VarType == "long":
-                varValue = qad_utils.str2long(varValue)
+                varValue = str2long(varValue)
                 if varValue is None:
                     self.set(VarName, long(0))
                 else:
                     self.set(VarName, varValue)
             elif VarType == "float":
-                varValue = qad_utils.str2float(varValue)
+                varValue = qad.qad_utils.str2float(varValue)
                 if varValue is None:
                     self.set(VarName, float(0))
                 else:
                     self.set(VarName, varValue)
             elif VarType == "bool":
-                varValue = qad_utils.str2bool(varValue)
+                varValue = qad.qad_utils.str2bool(varValue)
                 if varValue is None:
                     self.set(VarName, False)
                 else:

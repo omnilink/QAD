@@ -694,7 +694,7 @@ def getFeatureRequest(fetchAttributes=[], fetchGeometry=True, \
 def getVisibleVectorLayers(canvas):
     # Tutti i layer vettoriali visibili
     layers = canvas.layers()
-    for i in xrange(len(layers) - 1, -1, -1):
+    for i in range(len(layers) - 1, -1, -1):
         # se il layer non è vettoriale o non è visibile a questa scala
         if layers[i].type() != QgsMapLayer.VectorLayer or \
                 layers[i].hasScaleBasedVisibility() and \

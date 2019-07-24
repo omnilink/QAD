@@ -72,9 +72,9 @@ class QadPLINECommandClass(QadCommandClass):
 
         self.asToolForMPolygon = asToolForMPolygon
         if self.asToolForMPolygon:
-            self.rubberBand = createRubberBand(self.plugIn.canvas, QGis.Polygon, False)
+            self.rubberBand = createRubberBand(self.plugIn.canvas, QgsWkbTypes.PolygonGeometry, False)
         else:
-            self.rubberBand = createRubberBand(self.plugIn.canvas, QGis.Line)
+            self.rubberBand = createRubberBand(self.plugIn.canvas, QgsWkbTypes.LineGeometry)
 
         self.ArcPointMapTool = None
         self.mode = "LINE"

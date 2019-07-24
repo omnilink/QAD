@@ -42,7 +42,7 @@ from qad.qad_commands import *
 from qad.qad_entity import *
 from qad.qad_dim import QadDimStyles
 from qad.qad_layer import getLayerById, QadLayerStatusEnum, QadLayerStatusListClass
-import qad.qad_undoredo
+from qad.qad_undoredo import QadUndoStack
 from qad.qad_array_cmd import QadARRAYCommandClassSeriesTypeEnum
 
 
@@ -424,7 +424,7 @@ class Qad(QObject):
         # carico gli stili di quotatura
         self.loadDimStyles()
         # Gestore di Undo/Redo
-        self.undoStack = qad_undoredo.QadUndoStack()
+        self.undoStack = QadUndoStack()
 
         self.UpdatedVariablesEvent()
 
@@ -595,7 +595,7 @@ class Qad(QObject):
         self.mainAction = QAction(QIcon(":/plugins/qad/icons/qad.png"), \
                                   QadMsg.translate("QAD", "QAD"), self.iface.mainWindow())
         self.mainAction.setCheckable(True)
-        QObject.connect(self.mainAction, pyqtSignal("triggered()"), self.run)
+        self.mainAction.triggered(self.run())
 
         # SETCURRLAYERBYGRAPH
         cmd = self.QadCommands.getCommandObj(QadMsg.translate("Command_list", "SETCURRLAYERBYGRAPH"))

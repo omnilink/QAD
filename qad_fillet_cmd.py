@@ -33,7 +33,7 @@ from qad.qad_snapper import *
 from qad.qad_fillet_maptool import *
 from qad.qad_msg import QadMsg
 from qad.qad_textwindow import *
-import qad.qad_utils
+from qad.qad_utils import QadLinearObjectList
 import qad.qad_layer
 from qad.qad_variables import *
 from qad.qad_dim import QadDimStyles
@@ -68,13 +68,13 @@ class QadFILLETCommandClass(QadCommandClass):
 
         self.entity1 = QadEntity()
         self.atSubGeom1 = None
-        self.linearObjectList1 = qad_utils.QadLinearObjectList()
+        self.linearObjectList1 = QadLinearObjectList()
         self.partAt1 = 0
         self.pointAt1 = None
 
         self.entity2 = QadEntity()
         self.atSubGeom2 = None
-        self.linearObjectList2 = qad_utils.QadLinearObjectList()
+        self.linearObjectList2 = QadLinearObjectList()
         self.partAt2 = 0
         self.pointAt2 = None
 

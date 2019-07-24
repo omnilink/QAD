@@ -28,7 +28,7 @@ from qgis.PyQt.QtWidgets import QMenu
 from qgis.core import *
 from qgis.gui import *
 
-import qad.qad_utils
+from qad.qad_utils import getVisibleVectorLayers
 from qad.qad_variables import *
 from qad.qad_rubberband import *
 from qad.qad_getpoint import *
@@ -237,7 +237,7 @@ class QadMapTool(QgsMapTool):
         self.__csrRubberBand.moveEvent(self.toMapCoordinates(self.canvas.mouseLastXY()))
         self.__csrRubberBand.show()
         self.entitySet.initByCurrentQgsSelectedFeatures(
-            qad_utils.getVisibleVectorLayers(self.canvas))  # Tutti i layer vettoriali visibili
+            getVisibleVectorLayers(self.canvas))  # Tutti i layer vettoriali visibili
         self.refreshEntityGripPoints(self.entitySet)
 
         self.plugIn.QadCommands.continueCommandFromMapTool()

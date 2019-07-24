@@ -25,6 +25,7 @@
 # Import the PyQt and QGIS libraries
 from qgis.PyQt.QtCore import *
 from qgis.PyQt.QtGui import *
+from qgis.PyQt.Qt import QApplication
 from qgis.core import *
 from qgis.gui import *
 
@@ -53,7 +54,7 @@ class QadCursorRubberBand():
         self.cursorType = cursorType
 
         if cursorType & QadCursorTypeEnum.BOX:
-            self.__boxRubberBand = QgsRubberBand(mapCanvas, QGis.Line)
+            self.__boxRubberBand = QgsRubberBand(mapCanvas, QgsWkbTypes.LineGeometry)
             self.__boxRubberBand.setColor(
                 QColor(QadVariables.get(QadMsg.translate("Environment variables", "PICKBOXCOLOR"))))
             self.__pickSize = QadVariables.get(QadMsg.translate("Environment variables", "PICKBOX"))
@@ -63,13 +64,13 @@ class QadCursorRubberBand():
         if cursorType & QadCursorTypeEnum.CROSS:
             csrColor = QColor(QadVariables.get(QadMsg.translate("Environment variables", "CURSORCOLOR")))
             csrSize = QadVariables.get(QadMsg.translate("Environment variables", "CURSORSIZE"))
-            self.__crosshairRubberBandSx = QgsRubberBand(mapCanvas, QGis.Line)
+            self.__crosshairRubberBandSx = QgsRubberBand(mapCanvas, QgsWkbTypes.LineGeometry)
             self.__crosshairRubberBandSx.setColor(csrColor)
-            self.__crosshairRubberBandDx = QgsRubberBand(mapCanvas, QGis.Line)
+            self.__crosshairRubberBandDx = QgsRubberBand(mapCanvas, QgsWkbTypes.LineGeometry)
             self.__crosshairRubberBandDx.setColor(csrColor)
-            self.__crosshairRubberBandDw = QgsRubberBand(mapCanvas, QGis.Line)
+            self.__crosshairRubberBandDw = QgsRubberBand(mapCanvas, QgsWkbTypes.LineGeometry)
             self.__crosshairRubberBandDw.setColor(csrColor)
-            self.__crosshairRubberBandUp = QgsRubberBand(mapCanvas, QGis.Line)
+            self.__crosshairRubberBandUp = QgsRubberBand(mapCanvas, QgsWkbTypes.LineGeometry)
             self.__crosshairRubberBandUp.setColor(csrColor)
             screenRect = QApplication.desktop().screenGeometry(mapCanvas)
             self.__halfScreenSize = max(screenRect.height(), screenRect.width())
@@ -84,7 +85,7 @@ class QadCursorRubberBand():
             self.__crosshairRubberBandUp = None
 
         if cursorType & QadCursorTypeEnum.APERTURE:
-            self.__apertureRubberBand = QgsRubberBand(mapCanvas, QGis.Line)
+            self.__apertureRubberBand = QgsRubberBand(mapCanvas, QgsWkbTypes.LineGeometry)
             self.__apertureRubberBand.setColor(
                 QColor(QadVariables.get(QadMsg.translate("Environment variables", "PICKBOXCOLOR"))))
             self.__apertureRubberBand.setLineStyle(Qt.DotLine)
@@ -125,9 +126,9 @@ class QadCursorRubberBand():
         if self.cursorType & QadCursorTypeEnum.BOX:
             pickSize = self.__pickSize * self.mapCanvas.mapUnitsPerPixel()
 
-            self.__boxRubberBand.reset(QGis.Line)
+            self.__boxRubberBand.reset(QgsWkbTypes.LineGeometry)
 
-            point1 = QgsPoint(point.x() - pickSize, point.y() - pickSize)
+            point1 = QgsPointXY(point.x() - pickSize, point.y() - pickSize)
             dblPickSize = pickSize * 2
             self.__boxRubberBand.addPoint(point1, False)
             point1.setX(point1.x() + dblPickSize)
@@ -142,14 +143,14 @@ class QadCursorRubberBand():
         if self.cursorType & QadCursorTypeEnum.CROSS:
             halfScreenSize = self.__halfScreenSize * self.mapCanvas.mapUnitsPerPixel()
 
-            self.__crosshairRubberBandSx.reset(QGis.Line)
-            self.__crosshairRubberBandDx.reset(QGis.Line)
-            self.__crosshairRubberBandDw.reset(QGis.Line)
-            self.__crosshairRubberBandUp.reset(QGis.Line)
+            self.__crosshairRubberBandSx.reset(QgsWkbTypes.LineGeometry)
+            self.__crosshairRubberBandDx.reset(QgsWkbTypes.LineGeometry)
+            self.__crosshairRubberBandDw.reset(QgsWkbTypes.LineGeometry)
+            self.__crosshairRubberBandUp.reset(QgsWkbTypes.LineGeometry)
 
             if self.cursorType & QadCursorTypeEnum.BOX:
-                point1 = QgsPoint(point.x() - halfScreenSize, point.y())
-                point2 = QgsPoint(point.x() - pickSize, point.y())
+                point1 = QgsPointXY(point.x() - halfScreenSize, point.y())
+                point2 = QgsPointXY(point.x() - pickSize, point.y())
                 self.__crosshairRubberBandSx.addPoint(point1, False)
                 self.__crosshairRubberBandSx.addPoint(point2, True)
 
@@ -168,7 +169,7 @@ class QadCursorRubberBand():
                 self.__crosshairRubberBandUp.addPoint(point1, False)
                 self.__crosshairRubberBandUp.addPoint(point2, True)
             else:
-                point1 = QgsPoint(point.x() - halfScreenSize, point.y())
+                point1 = QgsPointXY(point.x() - halfScreenSize, point.y())
                 self.__crosshairRubberBandSx.addPoint(point, False)
                 self.__crosshairRubberBandSx.addPoint(point1, True)
 
@@ -187,7 +188,7 @@ class QadCursorRubberBand():
         if self.cursorType & QadCursorTypeEnum.APERTURE:
             apertureSize = self.__apertureSize * self.mapCanvas.mapUnitsPerPixel()
 
-            self.__apertureRubberBand.reset(QGis.Line)
+            self.__apertureRubberBand.reset(QgsWkbTypes.LineGeometry)
 
             point1 = QgsPoint(point.x() - apertureSize, point.y() - apertureSize)
             dblApertureSize = apertureSize * 2
@@ -245,7 +246,7 @@ def getQGISColorForRubberBand(geometryType=QgsWkbTypes.LineGeometry, alternative
     if alternativeBand:
         alpha = alpha * float(settings.value("/qgis/digitizing/line_color_alpha_scale", 0.75))
 
-    if geometryType == QGis.Polygon:
+    if geometryType == QgsWkbTypes.PolygonGeometry:
         color.setAlphaF(alpha)
 
     color.setAlphaF(alpha)
@@ -308,7 +309,7 @@ def createRubberBand(mapCanvas, geometryType=QgsWkbTypes.LineGeometry, alternati
 
     if borderColor is None:
         borderColor = getQGISColorForRubberBand(geometryType, alternativeBand)
-    rb.setBorderColor(borderColor)
+    rb.setColor(borderColor)
 
     if fillColor is None:
         rb.setFillColor(borderColor)

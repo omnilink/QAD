@@ -38,7 +38,7 @@ from qad.qad_textwindow import *
 from qad.qad_ssget_cmd import QadSSGetClass
 from qad.qad_entity import *
 from qad.qad_variables import *
-import qad.qad_utils
+from qad.qad_utils import QadLinearObjectList
 import qad.qad_layer
 from qad.qad_dim import *
 import qad.qad_array_fun
@@ -152,7 +152,7 @@ class QadARRAYCommandClass(QadCommandClass):
         self.pathTangentDirection = self.plugIn.lastPathTangentDirection_array
         self.pathRows = self.plugIn.lastPathRows_array
         self.pathItemsNumber = 1
-        self.pathLinearObjectList = qad_utils.QadLinearObjectList()
+        self.pathLinearObjectList = QadLinearObjectList()
         self.pathMethod = QadARRAYCommandClassPathMethodTypeEnum.MEASURE
         self.distanceFromStartPt = 0.0  # uso interno quando si imposta il metodo dividi
 

@@ -29,7 +29,7 @@ import os.path
 import codecs
 from qgis.core import *
 
-import qad.qad_utils
+from qad.qad_utils import findFile, strip
 
 
 # Classe che gestisce gli alias dei comandi di Qad
@@ -74,10 +74,10 @@ class QadCommandAliasesClass():
             region = userLocaleList[1] if len(userLocaleList) > 1 else ""
 
             fileName = "qad" + "_" + language + "_" + region + ".pgp "  # provo a caricare la lingua e la regione selezionate
-            Path = qad_utils.findFile(fileName)
+            Path = findFile(fileName)
             if Path == "":  # se file non trovato
                 fileName = "qad" + "_" + language + ".pgp "  # provo a caricare la lingua
-                Path = qad_utils.findFile(fileName)
+                Path = findFile(fileName)
                 if Path == "":  # se file non trovato
                     return True
         else:
@@ -87,7 +87,7 @@ class QadCommandAliasesClass():
         file = codecs.open(unicode(Path), "r", encoding='utf-8')  # apre il file in lettura in modalità unicode utf-8
 
         for line in file:
-            line = qad_utils.strip(line, [" ", "\t", "\r\n"])  # rimuovo gli spazi e i tab prima e dopo
+            line = strip(line, [" ", "\t", "\r\n"])  # rimuovo gli spazi e i tab prima e dopo
             if len(line) == 0:
                 continue
             # se la riga inizia per ; allora é una riga commentata
@@ -99,12 +99,12 @@ class QadCommandAliasesClass():
             if sep <= 0:
                 continue
             alias = line[0:sep]
-            alias = qad_utils.strip(alias, [" ", "\t", "\r\n"])  # rimuovo gli spazi e i tab prima e dopo
+            alias = strip(alias, [" ", "\t", "\r\n"])  # rimuovo gli spazi e i tab prima e dopo
             if len(alias) == 0:
                 continue
 
             command = line[sep + 1:]
-            command = qad_utils.strip(command, [" ", "\t", "\r\n"])  # rimuovo gli spazi e i tab prima e dopo
+            command = strip(command, [" ", "\t", "\r\n"])  # rimuovo gli spazi e i tab prima e dopo
             if len(command) <= 1:
                 continue
             # se il comando non inizia per * allora non é un alias

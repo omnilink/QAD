@@ -78,8 +78,8 @@ class QadOFFSETCommandClass(QadCommandClass):
 
         self.featureCache = []  # lista di (layer, feature)
         self.undoFeatureCacheIndexes = []  # posizioni in featureCache dei punti di undo
-        self.rubberBand = createRubberBand(self.plugIn.canvas, QGis.Line)
-        self.rubberBandPolygon = createRubberBand(self.plugIn.canvas, QGis.Polygon)
+        self.rubberBand = createRubberBand(self.plugIn.canvas, QgsWkbTypes.LineGeometry)
+        self.rubberBandPolygon = createRubberBand(self.plugIn.canvas, QgsWkbTypes.PolygonGeometry)
 
     def __del__(self):
         QadCommandClass.__del__(self)

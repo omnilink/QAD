@@ -34,7 +34,7 @@ import math
 import sys
 
 from qad.qad_msg import QadMsg
-import qad.qad_utils
+from qad.qad_utils import QadRawConfigParser
 from qad.qad_arc import *
 import qad.qad_stretch_fun
 import qad.qad_layer
@@ -724,7 +724,7 @@ class QadDimStyle():
         if not os.path.exists(_path):
             return False
 
-        config = qad_utils.QadRawConfigParser(allow_no_value=True)
+        config = QadRawConfigParser(allow_no_value=True)
         config.readfp(codecs.open(_path, "r", "utf-8"))
         # config.read(_path)
 
