@@ -33,15 +33,15 @@ from qgis.core import *
 import qad.qad_rc
 import math
 
-from qad_msg import QadMsg
-import qad_utils
-from qad_maptool import QadMapTool
-from qad_variables import *
+from qad.qad_msg import QadMsg
+import qad.qad_utils
+from qad.qad_maptool import QadMapTool
+from qad.qad_variables import *
 from qad_textwindow import *
 from qad_commands import *
-from qad_entity import *
+from qad.qad_entity import *
 from qad_dim import QadDimStyles
-from qad_layer import getLayerById, QadLayerStatusEnum, QadLayerStatusListClass
+from qad.qad_layer import getLayerById, QadLayerStatusEnum, QadLayerStatusListClass
 import qad_undoredo
 from qad_array_cmd import QadARRAYCommandClassSeriesTypeEnum
 
