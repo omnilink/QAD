@@ -7,7 +7,7 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt4 import QtCore, QtGui
+from qgis.PyQt import QtCore, QtGui
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -17,11 +17,14 @@ except AttributeError:
 
 try:
     _encoding = QtGui.QApplication.UnicodeUTF8
+
+
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig, _encoding)
 except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
+
 
 class Ui_DimStyle_New_Dialog(object):
     def setupUi(self, DimStyle_New_Dialog):
@@ -58,11 +61,15 @@ class Ui_DimStyle_New_Dialog(object):
         self.newDimStyleDescr.setObjectName(_fromUtf8("newDimStyleDescr"))
 
         self.retranslateUi(DimStyle_New_Dialog)
-        QtCore.QObject.connect(self.DimStyleNameFrom, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), DimStyle_New_Dialog.DimStyleNameFromChanged)
-        QtCore.QObject.connect(self.newDimStyleName, QtCore.SIGNAL(_fromUtf8("textEdited(QString)")), DimStyle_New_Dialog.newStyleNameChanged)
+        QtCore.QObject.connect(self.DimStyleNameFrom, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")),
+                               DimStyle_New_Dialog.DimStyleNameFromChanged)
+        QtCore.QObject.connect(self.newDimStyleName, QtCore.SIGNAL(_fromUtf8("textEdited(QString)")),
+                               DimStyle_New_Dialog.newStyleNameChanged)
         QtCore.QObject.connect(self.cancelButton, QtCore.SIGNAL(_fromUtf8("clicked()")), DimStyle_New_Dialog.reject)
-        QtCore.QObject.connect(self.helpButton, QtCore.SIGNAL(_fromUtf8("clicked()")), DimStyle_New_Dialog.ButtonHELP_Pressed)
-        QtCore.QObject.connect(self.continueButton, QtCore.SIGNAL(_fromUtf8("clicked()")), DimStyle_New_Dialog.ButtonBOX_continue)
+        QtCore.QObject.connect(self.helpButton, QtCore.SIGNAL(_fromUtf8("clicked()")),
+                               DimStyle_New_Dialog.ButtonHELP_Pressed)
+        QtCore.QObject.connect(self.continueButton, QtCore.SIGNAL(_fromUtf8("clicked()")),
+                               DimStyle_New_Dialog.ButtonBOX_continue)
         QtCore.QMetaObject.connectSlotsByName(DimStyle_New_Dialog)
 
     def retranslateUi(self, DimStyle_New_Dialog):
@@ -73,4 +80,3 @@ class Ui_DimStyle_New_Dialog(object):
         self.cancelButton.setText(_translate("DimStyle_New_Dialog", "Cancel", None))
         self.helpButton.setText(_translate("DimStyle_New_Dialog", "?", None))
         self.label_3.setText(_translate("DimStyle_New_Dialog", "Description:", None))
-

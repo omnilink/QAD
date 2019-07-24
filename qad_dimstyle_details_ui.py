@@ -7,7 +7,7 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt4 import QtCore, QtGui
+from qgis.PyQt import QtCore, QtGui
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -17,11 +17,14 @@ except AttributeError:
 
 try:
     _encoding = QtGui.QApplication.UnicodeUTF8
+
+
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig, _encoding)
 except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
+
 
 class Ui_DimStyle_Details_Dialog(object):
     def setupUi(self, DimStyle_Details_Dialog):
@@ -433,75 +436,135 @@ class Ui_DimStyle_Details_Dialog(object):
 
         self.retranslateUi(DimStyle_Details_Dialog)
         self.tabWidget.setCurrentIndex(3)
-        QtCore.QObject.connect(self.linearLayerName, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), DimStyle_Details_Dialog.linearLayerNameChanged)
-        QtCore.QObject.connect(self.symbolLayerName, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), DimStyle_Details_Dialog.symbolLayerNameChanged)
-        QtCore.QObject.connect(self.textualLayerName, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), DimStyle_Details_Dialog.textualLayerNameChanged)
-        QtCore.QObject.connect(self.textRotModeFixedRot, QtCore.SIGNAL(_fromUtf8("toggled(bool)")), DimStyle_Details_Dialog.textRotModeFixedRotToggled)
-        QtCore.QObject.connect(self.extLineIsFixedLen, QtCore.SIGNAL(_fromUtf8("toggled(bool)")), DimStyle_Details_Dialog.extLineIsFixedLenToggled)
-        QtCore.QObject.connect(self.helpButton, QtCore.SIGNAL(_fromUtf8("clicked()")), DimStyle_Details_Dialog.ButtonHELP_Pressed)
+        QtCore.QObject.connect(self.linearLayerName, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")),
+                               DimStyle_Details_Dialog.linearLayerNameChanged)
+        QtCore.QObject.connect(self.symbolLayerName, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")),
+                               DimStyle_Details_Dialog.symbolLayerNameChanged)
+        QtCore.QObject.connect(self.textualLayerName, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")),
+                               DimStyle_Details_Dialog.textualLayerNameChanged)
+        QtCore.QObject.connect(self.textRotModeFixedRot, QtCore.SIGNAL(_fromUtf8("toggled(bool)")),
+                               DimStyle_Details_Dialog.textRotModeFixedRotToggled)
+        QtCore.QObject.connect(self.extLineIsFixedLen, QtCore.SIGNAL(_fromUtf8("toggled(bool)")),
+                               DimStyle_Details_Dialog.extLineIsFixedLenToggled)
+        QtCore.QObject.connect(self.helpButton, QtCore.SIGNAL(_fromUtf8("clicked()")),
+                               DimStyle_Details_Dialog.ButtonHELP_Pressed)
         QtCore.QObject.connect(self.okButton, QtCore.SIGNAL(_fromUtf8("clicked()")), DimStyle_Details_Dialog.accept)
         QtCore.QObject.connect(self.cancelButton, QtCore.SIGNAL(_fromUtf8("clicked()")), DimStyle_Details_Dialog.reject)
-        QtCore.QObject.connect(self.tabWidget, QtCore.SIGNAL(_fromUtf8("currentChanged(int)")), DimStyle_Details_Dialog.currentTabChanged)
-        QtCore.QObject.connect(self.lineTypeFieldName, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), DimStyle_Details_Dialog.linetypeFieldNameChanged)
-        QtCore.QObject.connect(self.symbolFieldName, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), DimStyle_Details_Dialog.symbolFieldNameChanged)
-        QtCore.QObject.connect(self.scaleFieldName, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), DimStyle_Details_Dialog.scaleFieldNameChanged)
-        QtCore.QObject.connect(self.idFieldName, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), DimStyle_Details_Dialog.idFieldNameChanged)
-        QtCore.QObject.connect(self.dimStyleFieldName, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), DimStyle_Details_Dialog.dimStyleFieldNameChanged)
-        QtCore.QObject.connect(self.dimTypeFieldName, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), DimStyle_Details_Dialog.dimTypeFieldNameChanged)
-        QtCore.QObject.connect(self.colorFieldName, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), DimStyle_Details_Dialog.colorFieldNameChanged)
-        QtCore.QObject.connect(self.rotFieldName, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), DimStyle_Details_Dialog.rotFieldNameChanged)
-        QtCore.QObject.connect(self.componentFieldName, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), DimStyle_Details_Dialog.componentFieldNameChanged)
-        QtCore.QObject.connect(self.idParentFieldName, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), DimStyle_Details_Dialog.idParentFieldNameChanged)
-        QtCore.QObject.connect(self.dimLineLineType, QtCore.SIGNAL(_fromUtf8("textChanged(QString)")), DimStyle_Details_Dialog.dimLineLineTypeChanged)
-        QtCore.QObject.connect(self.dimLine1Hide, QtCore.SIGNAL(_fromUtf8("toggled(bool)")), DimStyle_Details_Dialog.dimLine1HideToggled)
-        QtCore.QObject.connect(self.dimLine2Hide, QtCore.SIGNAL(_fromUtf8("toggled(bool)")), DimStyle_Details_Dialog.dimLine2HideToggled)
-        QtCore.QObject.connect(self.extLine1LineType, QtCore.SIGNAL(_fromUtf8("textChanged(QString)")), DimStyle_Details_Dialog.extLine1LineTypeChanged)
-        QtCore.QObject.connect(self.extLine2LineType, QtCore.SIGNAL(_fromUtf8("textChanged(QString)")), DimStyle_Details_Dialog.extLine2LineTypeChanged)
-        QtCore.QObject.connect(self.extLine1Hide, QtCore.SIGNAL(_fromUtf8("toggled(bool)")), DimStyle_Details_Dialog.extLine1HideToggled)
-        QtCore.QObject.connect(self.extLine2Hide, QtCore.SIGNAL(_fromUtf8("toggled(bool)")), DimStyle_Details_Dialog.extLine2HideToggled)
-        QtCore.QObject.connect(self.extLineOffsetDimLine, QtCore.SIGNAL(_fromUtf8("valueChanged(double)")), DimStyle_Details_Dialog.extLineOffsetDimLineChanged)
-        QtCore.QObject.connect(self.extLineOffsetOrigPoints, QtCore.SIGNAL(_fromUtf8("valueChanged(double)")), DimStyle_Details_Dialog.extLineOffsetOrigPointsChanged)
-        QtCore.QObject.connect(self.extLineFixedLen, QtCore.SIGNAL(_fromUtf8("valueChanged(double)")), DimStyle_Details_Dialog.extLineFixedLenChanged)
-        QtCore.QObject.connect(self.block1Name, QtCore.SIGNAL(_fromUtf8("textChanged(QString)")), DimStyle_Details_Dialog.block1NameChanged)
-        QtCore.QObject.connect(self.block2Name, QtCore.SIGNAL(_fromUtf8("textChanged(QString)")), DimStyle_Details_Dialog.block2NameChanged)
-        QtCore.QObject.connect(self.blockLeaderName, QtCore.SIGNAL(_fromUtf8("textChanged(QString)")), DimStyle_Details_Dialog.blockLeaderNameChanged)
-        QtCore.QObject.connect(self.blockWidth, QtCore.SIGNAL(_fromUtf8("valueChanged(double)")), DimStyle_Details_Dialog.blockWidthChanged)
-        QtCore.QObject.connect(self.blockScale, QtCore.SIGNAL(_fromUtf8("valueChanged(double)")), DimStyle_Details_Dialog.blockScaleChanged)
-        QtCore.QObject.connect(self.textFont, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), DimStyle_Details_Dialog.textFontChanged)
-        QtCore.QObject.connect(self.textHeight, QtCore.SIGNAL(_fromUtf8("valueChanged(double)")), DimStyle_Details_Dialog.textHeightChanged)
-        QtCore.QObject.connect(self.textVerticalPos, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), DimStyle_Details_Dialog.textVerticalPosChanged)
-        QtCore.QObject.connect(self.textHorizontalPos, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), DimStyle_Details_Dialog.textHorizontalPosChanged)
-        QtCore.QObject.connect(self.textDirection, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), DimStyle_Details_Dialog.textDirectionChanged)
-        QtCore.QObject.connect(self.textOffsetDist, QtCore.SIGNAL(_fromUtf8("valueChanged(double)")), DimStyle_Details_Dialog.textOffsetDistChanged)
-        QtCore.QObject.connect(self.textForcedRot, QtCore.SIGNAL(_fromUtf8("valueChanged(double)")), DimStyle_Details_Dialog.textForcedRotChanged)
-        QtCore.QObject.connect(self.blockSuppressionForNoSpace, QtCore.SIGNAL(_fromUtf8("toggled(bool)")), DimStyle_Details_Dialog.blockSuppressionForNoSpaceToggled)
-        QtCore.QObject.connect(self.textDecimals, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), DimStyle_Details_Dialog.textDecimalsChanged)
-        QtCore.QObject.connect(self.textDecimalSep, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), DimStyle_Details_Dialog.textDecimalSepChanged)
-        QtCore.QObject.connect(self.textPrefix, QtCore.SIGNAL(_fromUtf8("textChanged(QString)")), DimStyle_Details_Dialog.textPrefixChanged)
-        QtCore.QObject.connect(self.textSuffix, QtCore.SIGNAL(_fromUtf8("textChanged(QString)")), DimStyle_Details_Dialog.textSuffixChanged)
-        QtCore.QObject.connect(self.textSuppressLeadingZeros, QtCore.SIGNAL(_fromUtf8("toggled(bool)")), DimStyle_Details_Dialog.textSuppressLeadingZerosToggled)
-        QtCore.QObject.connect(self.textDecimalZerosSuppression, QtCore.SIGNAL(_fromUtf8("toggled(bool)")), DimStyle_Details_Dialog.textDecimalZerosSuppressionToggled)
-        QtCore.QObject.connect(self.textRotModeHorizontal, QtCore.SIGNAL(_fromUtf8("toggled(bool)")), DimStyle_Details_Dialog.textRotModeHorizontalToggled)
-        QtCore.QObject.connect(self.textRotModeAligned, QtCore.SIGNAL(_fromUtf8("toggled(bool)")), DimStyle_Details_Dialog.textRotModeAlignedToggled)
-        QtCore.QObject.connect(self.textRotModeISO, QtCore.SIGNAL(_fromUtf8("toggled(bool)")), DimStyle_Details_Dialog.textRotModeISOToggled)
-        QtCore.QObject.connect(self.textBlockAdjustWhicheverFitsBestOutside, QtCore.SIGNAL(_fromUtf8("toggled(bool)")), DimStyle_Details_Dialog.textBlockAdjustWhicheverFitsBestOutsideToggled)
-        QtCore.QObject.connect(self.textBlockAdjustFirstSymbolOutside, QtCore.SIGNAL(_fromUtf8("toggled(bool)")), DimStyle_Details_Dialog.textBlockAdjustFirstSymbolOutsideToggled)
-        QtCore.QObject.connect(self.textBlockAdjustFirstTextOutside, QtCore.SIGNAL(_fromUtf8("toggled(bool)")), DimStyle_Details_Dialog.textBlockAdjustFirstTextOutsideToggled)
-        QtCore.QObject.connect(self.textBlockAdjustBothOutside, QtCore.SIGNAL(_fromUtf8("toggled(bool)")), DimStyle_Details_Dialog.textBlockAdjustBothOutsideToggled)
-        QtCore.QObject.connect(self.arcSymbolPreceding, QtCore.SIGNAL(_fromUtf8("toggled(bool)")), DimStyle_Details_Dialog.arcSymbolPrecedingToggled)
-        QtCore.QObject.connect(self.arcSymbolAbove, QtCore.SIGNAL(_fromUtf8("toggled(bool)")), DimStyle_Details_Dialog.arcSymbolAboveToggled)
-        QtCore.QObject.connect(self.arcSymbolNone, QtCore.SIGNAL(_fromUtf8("toggled(bool)")), DimStyle_Details_Dialog.arcSymbolNoneToggled)
+        QtCore.QObject.connect(self.tabWidget, QtCore.SIGNAL(_fromUtf8("currentChanged(int)")),
+                               DimStyle_Details_Dialog.currentTabChanged)
+        QtCore.QObject.connect(self.lineTypeFieldName, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")),
+                               DimStyle_Details_Dialog.linetypeFieldNameChanged)
+        QtCore.QObject.connect(self.symbolFieldName, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")),
+                               DimStyle_Details_Dialog.symbolFieldNameChanged)
+        QtCore.QObject.connect(self.scaleFieldName, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")),
+                               DimStyle_Details_Dialog.scaleFieldNameChanged)
+        QtCore.QObject.connect(self.idFieldName, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")),
+                               DimStyle_Details_Dialog.idFieldNameChanged)
+        QtCore.QObject.connect(self.dimStyleFieldName, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")),
+                               DimStyle_Details_Dialog.dimStyleFieldNameChanged)
+        QtCore.QObject.connect(self.dimTypeFieldName, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")),
+                               DimStyle_Details_Dialog.dimTypeFieldNameChanged)
+        QtCore.QObject.connect(self.colorFieldName, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")),
+                               DimStyle_Details_Dialog.colorFieldNameChanged)
+        QtCore.QObject.connect(self.rotFieldName, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")),
+                               DimStyle_Details_Dialog.rotFieldNameChanged)
+        QtCore.QObject.connect(self.componentFieldName, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")),
+                               DimStyle_Details_Dialog.componentFieldNameChanged)
+        QtCore.QObject.connect(self.idParentFieldName, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")),
+                               DimStyle_Details_Dialog.idParentFieldNameChanged)
+        QtCore.QObject.connect(self.dimLineLineType, QtCore.SIGNAL(_fromUtf8("textChanged(QString)")),
+                               DimStyle_Details_Dialog.dimLineLineTypeChanged)
+        QtCore.QObject.connect(self.dimLine1Hide, QtCore.SIGNAL(_fromUtf8("toggled(bool)")),
+                               DimStyle_Details_Dialog.dimLine1HideToggled)
+        QtCore.QObject.connect(self.dimLine2Hide, QtCore.SIGNAL(_fromUtf8("toggled(bool)")),
+                               DimStyle_Details_Dialog.dimLine2HideToggled)
+        QtCore.QObject.connect(self.extLine1LineType, QtCore.SIGNAL(_fromUtf8("textChanged(QString)")),
+                               DimStyle_Details_Dialog.extLine1LineTypeChanged)
+        QtCore.QObject.connect(self.extLine2LineType, QtCore.SIGNAL(_fromUtf8("textChanged(QString)")),
+                               DimStyle_Details_Dialog.extLine2LineTypeChanged)
+        QtCore.QObject.connect(self.extLine1Hide, QtCore.SIGNAL(_fromUtf8("toggled(bool)")),
+                               DimStyle_Details_Dialog.extLine1HideToggled)
+        QtCore.QObject.connect(self.extLine2Hide, QtCore.SIGNAL(_fromUtf8("toggled(bool)")),
+                               DimStyle_Details_Dialog.extLine2HideToggled)
+        QtCore.QObject.connect(self.extLineOffsetDimLine, QtCore.SIGNAL(_fromUtf8("valueChanged(double)")),
+                               DimStyle_Details_Dialog.extLineOffsetDimLineChanged)
+        QtCore.QObject.connect(self.extLineOffsetOrigPoints, QtCore.SIGNAL(_fromUtf8("valueChanged(double)")),
+                               DimStyle_Details_Dialog.extLineOffsetOrigPointsChanged)
+        QtCore.QObject.connect(self.extLineFixedLen, QtCore.SIGNAL(_fromUtf8("valueChanged(double)")),
+                               DimStyle_Details_Dialog.extLineFixedLenChanged)
+        QtCore.QObject.connect(self.block1Name, QtCore.SIGNAL(_fromUtf8("textChanged(QString)")),
+                               DimStyle_Details_Dialog.block1NameChanged)
+        QtCore.QObject.connect(self.block2Name, QtCore.SIGNAL(_fromUtf8("textChanged(QString)")),
+                               DimStyle_Details_Dialog.block2NameChanged)
+        QtCore.QObject.connect(self.blockLeaderName, QtCore.SIGNAL(_fromUtf8("textChanged(QString)")),
+                               DimStyle_Details_Dialog.blockLeaderNameChanged)
+        QtCore.QObject.connect(self.blockWidth, QtCore.SIGNAL(_fromUtf8("valueChanged(double)")),
+                               DimStyle_Details_Dialog.blockWidthChanged)
+        QtCore.QObject.connect(self.blockScale, QtCore.SIGNAL(_fromUtf8("valueChanged(double)")),
+                               DimStyle_Details_Dialog.blockScaleChanged)
+        QtCore.QObject.connect(self.textFont, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")),
+                               DimStyle_Details_Dialog.textFontChanged)
+        QtCore.QObject.connect(self.textHeight, QtCore.SIGNAL(_fromUtf8("valueChanged(double)")),
+                               DimStyle_Details_Dialog.textHeightChanged)
+        QtCore.QObject.connect(self.textVerticalPos, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")),
+                               DimStyle_Details_Dialog.textVerticalPosChanged)
+        QtCore.QObject.connect(self.textHorizontalPos, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")),
+                               DimStyle_Details_Dialog.textHorizontalPosChanged)
+        QtCore.QObject.connect(self.textDirection, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")),
+                               DimStyle_Details_Dialog.textDirectionChanged)
+        QtCore.QObject.connect(self.textOffsetDist, QtCore.SIGNAL(_fromUtf8("valueChanged(double)")),
+                               DimStyle_Details_Dialog.textOffsetDistChanged)
+        QtCore.QObject.connect(self.textForcedRot, QtCore.SIGNAL(_fromUtf8("valueChanged(double)")),
+                               DimStyle_Details_Dialog.textForcedRotChanged)
+        QtCore.QObject.connect(self.blockSuppressionForNoSpace, QtCore.SIGNAL(_fromUtf8("toggled(bool)")),
+                               DimStyle_Details_Dialog.blockSuppressionForNoSpaceToggled)
+        QtCore.QObject.connect(self.textDecimals, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")),
+                               DimStyle_Details_Dialog.textDecimalsChanged)
+        QtCore.QObject.connect(self.textDecimalSep, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")),
+                               DimStyle_Details_Dialog.textDecimalSepChanged)
+        QtCore.QObject.connect(self.textPrefix, QtCore.SIGNAL(_fromUtf8("textChanged(QString)")),
+                               DimStyle_Details_Dialog.textPrefixChanged)
+        QtCore.QObject.connect(self.textSuffix, QtCore.SIGNAL(_fromUtf8("textChanged(QString)")),
+                               DimStyle_Details_Dialog.textSuffixChanged)
+        QtCore.QObject.connect(self.textSuppressLeadingZeros, QtCore.SIGNAL(_fromUtf8("toggled(bool)")),
+                               DimStyle_Details_Dialog.textSuppressLeadingZerosToggled)
+        QtCore.QObject.connect(self.textDecimalZerosSuppression, QtCore.SIGNAL(_fromUtf8("toggled(bool)")),
+                               DimStyle_Details_Dialog.textDecimalZerosSuppressionToggled)
+        QtCore.QObject.connect(self.textRotModeHorizontal, QtCore.SIGNAL(_fromUtf8("toggled(bool)")),
+                               DimStyle_Details_Dialog.textRotModeHorizontalToggled)
+        QtCore.QObject.connect(self.textRotModeAligned, QtCore.SIGNAL(_fromUtf8("toggled(bool)")),
+                               DimStyle_Details_Dialog.textRotModeAlignedToggled)
+        QtCore.QObject.connect(self.textRotModeISO, QtCore.SIGNAL(_fromUtf8("toggled(bool)")),
+                               DimStyle_Details_Dialog.textRotModeISOToggled)
+        QtCore.QObject.connect(self.textBlockAdjustWhicheverFitsBestOutside, QtCore.SIGNAL(_fromUtf8("toggled(bool)")),
+                               DimStyle_Details_Dialog.textBlockAdjustWhicheverFitsBestOutsideToggled)
+        QtCore.QObject.connect(self.textBlockAdjustFirstSymbolOutside, QtCore.SIGNAL(_fromUtf8("toggled(bool)")),
+                               DimStyle_Details_Dialog.textBlockAdjustFirstSymbolOutsideToggled)
+        QtCore.QObject.connect(self.textBlockAdjustFirstTextOutside, QtCore.SIGNAL(_fromUtf8("toggled(bool)")),
+                               DimStyle_Details_Dialog.textBlockAdjustFirstTextOutsideToggled)
+        QtCore.QObject.connect(self.textBlockAdjustBothOutside, QtCore.SIGNAL(_fromUtf8("toggled(bool)")),
+                               DimStyle_Details_Dialog.textBlockAdjustBothOutsideToggled)
+        QtCore.QObject.connect(self.arcSymbolPreceding, QtCore.SIGNAL(_fromUtf8("toggled(bool)")),
+                               DimStyle_Details_Dialog.arcSymbolPrecedingToggled)
+        QtCore.QObject.connect(self.arcSymbolAbove, QtCore.SIGNAL(_fromUtf8("toggled(bool)")),
+                               DimStyle_Details_Dialog.arcSymbolAboveToggled)
+        QtCore.QObject.connect(self.arcSymbolNone, QtCore.SIGNAL(_fromUtf8("toggled(bool)")),
+                               DimStyle_Details_Dialog.arcSymbolNoneToggled)
         QtCore.QMetaObject.connectSlotsByName(DimStyle_Details_Dialog)
 
     def retranslateUi(self, DimStyle_Details_Dialog):
-        DimStyle_Details_Dialog.setWindowTitle(_translate("DimStyle_Details_Dialog", "QAD - Dimension style details", None))
+        DimStyle_Details_Dialog.setWindowTitle(
+            _translate("DimStyle_Details_Dialog", "QAD - Dimension style details", None))
         self.groupBox_5.setTitle(_translate("DimStyle_Details_Dialog", "Lines", None))
         self.label_2.setText(_translate("DimStyle_Details_Dialog", "Layer:", None))
-        self.linearLayerName.setToolTip(_translate("DimStyle_Details_Dialog", "Name of the layer for dimension lines.", None))
-        self.lineTypeFieldName.setToolTip(_translate("DimStyle_Details_Dialog", "Field storing the linetype name.", None))
+        self.linearLayerName.setToolTip(
+            _translate("DimStyle_Details_Dialog", "Name of the layer for dimension lines.", None))
+        self.lineTypeFieldName.setToolTip(
+            _translate("DimStyle_Details_Dialog", "Field storing the linetype name.", None))
         self.label_21.setText(_translate("DimStyle_Details_Dialog", "Linetype field:", None))
         self.groupBox_6.setTitle(_translate("DimStyle_Details_Dialog", "Symbols and arrows", None))
-        self.symbolLayerName.setToolTip(_translate("DimStyle_Details_Dialog", "Name of the layer for dimension symbols and arrows.", None))
+        self.symbolLayerName.setToolTip(
+            _translate("DimStyle_Details_Dialog", "Name of the layer for dimension symbols and arrows.", None))
         self.label_13.setText(_translate("DimStyle_Details_Dialog", "Layer:", None))
         self.label_22.setText(_translate("DimStyle_Details_Dialog", "Symbol field:", None))
         self.symbolFieldName.setToolTip(_translate("DimStyle_Details_Dialog", "Field storing the symbol name.", None))
@@ -509,31 +572,46 @@ class Ui_DimStyle_Details_Dialog(object):
         self.label_23.setText(_translate("DimStyle_Details_Dialog", "Scale field:", None))
         self.groupBox_7.setTitle(_translate("DimStyle_Details_Dialog", "Generics fields", None))
         self.label_24.setText(_translate("DimStyle_Details_Dialog", "Rotation:", None))
-        self.rotFieldName.setToolTip(_translate("DimStyle_Details_Dialog", "Field storing the rotation of the punctual elements od dimension (symbols, arrows, text).", None))
+        self.rotFieldName.setToolTip(_translate("DimStyle_Details_Dialog",
+                                                "Field storing the rotation of the punctual elements od dimension (symbols, arrows, text).",
+                                                None))
         self.label_16.setText(_translate("DimStyle_Details_Dialog", "Color:", None))
-        self.colorFieldName.setToolTip(_translate("DimStyle_Details_Dialog", "Field storing the RGB colorfor all elements of dimension (e.g. \"255,255,255,255\" = white with total opacity).", None))
+        self.colorFieldName.setToolTip(_translate("DimStyle_Details_Dialog",
+                                                  "Field storing the RGB colorfor all elements of dimension (e.g. \"255,255,255,255\" = white with total opacity).",
+                                                  None))
         self.label_28.setText(_translate("DimStyle_Details_Dialog", "Linking ID:", None))
-        self.idParentFieldName.setToolTip(_translate("DimStyle_Details_Dialog", "Field storing the ID of the dimension to group all elements (except the text which is the root element).", None))
+        self.idParentFieldName.setToolTip(_translate("DimStyle_Details_Dialog",
+                                                     "Field storing the ID of the dimension to group all elements (except the text which is the root element).",
+                                                     None))
         self.label_25.setText(_translate("DimStyle_Details_Dialog", "Component type:", None))
-        self.componentFieldName.setToolTip(_translate("DimStyle_Details_Dialog", "<html><head/><body><p>Field storing the component type of dimension:</p><p>&quot;D1&quot; = Dimension line 1.</p><p>&quot;D2&quot; = Dimension line 2.</p><p>&quot;E1&quot; = Extension line 1.</p><p>&quot;E2&quot; = Extension line 2.</p><p>&quot;L&quot;  = Leader.</p><p>&quot;B1&quot; = Block 1.</p><p>&quot;B2&quot; = Block 2.</p><p>&quot;LB&quot; = Leader Block.</p><p>&quot;AB&quot; = Arc Block.</p><p>&quot;D1&quot; = Dimension point 1.</p><p>&quot;D2&quot; = Dimension point 2.</p></body></html>", None))
+        self.componentFieldName.setToolTip(_translate("DimStyle_Details_Dialog",
+                                                      "<html><head/><body><p>Field storing the component type of dimension:</p><p>&quot;D1&quot; = Dimension line 1.</p><p>&quot;D2&quot; = Dimension line 2.</p><p>&quot;E1&quot; = Extension line 1.</p><p>&quot;E2&quot; = Extension line 2.</p><p>&quot;L&quot;  = Leader.</p><p>&quot;B1&quot; = Block 1.</p><p>&quot;B2&quot; = Block 2.</p><p>&quot;LB&quot; = Leader Block.</p><p>&quot;AB&quot; = Arc Block.</p><p>&quot;D1&quot; = Dimension point 1.</p><p>&quot;D2&quot; = Dimension point 2.</p></body></html>",
+                                                      None))
         self.groupBox_8.setTitle(_translate("DimStyle_Details_Dialog", "Text", None))
         self.label_27.setText(_translate("DimStyle_Details_Dialog", "ID Field:", None))
-        self.idFieldName.setToolTip(_translate("DimStyle_Details_Dialog", "Field storing the unique code for each dimension.", None))
-        self.dimStyleFieldName.setToolTip(_translate("DimStyle_Details_Dialog", "Field storing the name of the dimension style.", None))
+        self.idFieldName.setToolTip(
+            _translate("DimStyle_Details_Dialog", "Field storing the unique code for each dimension.", None))
+        self.dimStyleFieldName.setToolTip(
+            _translate("DimStyle_Details_Dialog", "Field storing the name of the dimension style.", None))
         self.label_29.setText(_translate("DimStyle_Details_Dialog", "Dim. style field:", None))
         self.label_30.setText(_translate("DimStyle_Details_Dialog", "Dim. type field:", None))
-        self.dimTypeFieldName.setToolTip(_translate("DimStyle_Details_Dialog", "<html><head/><body><p>Field storing the dimension type:</p><p>&quot;AL&quot; = linear dimension that is aligned with the origin points of the extension lines.</p><p>&quot;AN&quot; = angular dimension, it measures the angle between selected objects or 3 points.</p><p>&quot;BL&quot; = linear, angular, or ordinate dimension from the baseline of the previous or selected dimension.</p><p>&quot;CE&quot; = creates the center mark or the centerlines of circles and arcs.</p><p>&quot;DI&quot; = creates a diameter dimension for a circle or an arc.</p><p>&quot;LD&quot; = creates a line that connects annotation to a feature..</p><p>&quot;LI&quot; = linear dimension with a horizontal, vertical, or rotated dimension line.</p><p>&quot;RA&quot; = radial dimension, measures the radius of a selected circle or arc and displays the dimension text with a radius symbol in front of it.</p><p>&quot;AR&quot; = arc length dimensions measure the distance along an arc or polyline arc segment.</p></body></html>", None))
+        self.dimTypeFieldName.setToolTip(_translate("DimStyle_Details_Dialog",
+                                                    "<html><head/><body><p>Field storing the dimension type:</p><p>&quot;AL&quot; = linear dimension that is aligned with the origin points of the extension lines.</p><p>&quot;AN&quot; = angular dimension, it measures the angle between selected objects or 3 points.</p><p>&quot;BL&quot; = linear, angular, or ordinate dimension from the baseline of the previous or selected dimension.</p><p>&quot;CE&quot; = creates the center mark or the centerlines of circles and arcs.</p><p>&quot;DI&quot; = creates a diameter dimension for a circle or an arc.</p><p>&quot;LD&quot; = creates a line that connects annotation to a feature..</p><p>&quot;LI&quot; = linear dimension with a horizontal, vertical, or rotated dimension line.</p><p>&quot;RA&quot; = radial dimension, measures the radius of a selected circle or arc and displays the dimension text with a radius symbol in front of it.</p><p>&quot;AR&quot; = arc length dimensions measure the distance along an arc or polyline arc segment.</p></body></html>",
+                                                    None))
         self.label_14.setText(_translate("DimStyle_Details_Dialog", "Layer:", None))
-        self.textualLayerName.setToolTip(_translate("DimStyle_Details_Dialog", "Name of the layer storing dimension texts.", None))
+        self.textualLayerName.setToolTip(
+            _translate("DimStyle_Details_Dialog", "Name of the layer storing dimension texts.", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.DBTab), _translate("DimStyle_Details_Dialog", "DB", None))
         self.groupBox.setTitle(_translate("DimStyle_Details_Dialog", "Dimension lines", None))
         self.label.setText(_translate("DimStyle_Details_Dialog", "Color:", None))
         self.dimLineLineType.setToolTip(_translate("DimStyle_Details_Dialog", "Linetype of dimension line.", None))
         self.label_3.setText(_translate("DimStyle_Details_Dialog", "Linetype:", None))
         self.label_5.setText(_translate("DimStyle_Details_Dialog", "Suppress:", None))
-        self.dimLine1Hide.setToolTip(_translate("DimStyle_Details_Dialog", "Suppresses display of dimension line 1.", None))
+        self.dimLine1Hide.setToolTip(
+            _translate("DimStyle_Details_Dialog", "Suppresses display of dimension line 1.", None))
         self.dimLine1Hide.setText(_translate("DimStyle_Details_Dialog", "Dim. line 1", None))
-        self.dimLine2Hide.setToolTip(_translate("DimStyle_Details_Dialog", "Suppresses display of dimension line 2.", None))
+        self.dimLine2Hide.setToolTip(
+            _translate("DimStyle_Details_Dialog", "Suppresses display of dimension line 2.", None))
         self.dimLine2Hide.setText(_translate("DimStyle_Details_Dialog", "Dim. line 2", None))
         self.groupBox_2.setTitle(_translate("DimStyle_Details_Dialog", "Extension lines", None))
         self.label_6.setText(_translate("DimStyle_Details_Dialog", "Color:", None))
@@ -542,27 +620,42 @@ class Ui_DimStyle_Details_Dialog(object):
         self.label_8.setText(_translate("DimStyle_Details_Dialog", "Linetype ext. 2:", None))
         self.extLine2LineType.setToolTip(_translate("DimStyle_Details_Dialog", "Linetype for extension line 2.", None))
         self.label_9.setText(_translate("DimStyle_Details_Dialog", "Suppress:", None))
-        self.extLine1Hide.setToolTip(_translate("DimStyle_Details_Dialog", "Suppresses display of extension line 1.", None))
+        self.extLine1Hide.setToolTip(
+            _translate("DimStyle_Details_Dialog", "Suppresses display of extension line 1.", None))
         self.extLine1Hide.setText(_translate("DimStyle_Details_Dialog", "Ext. line 1", None))
-        self.extLine2Hide.setToolTip(_translate("DimStyle_Details_Dialog", "Suppresses display of extension line 2.", None))
+        self.extLine2Hide.setToolTip(
+            _translate("DimStyle_Details_Dialog", "Suppresses display of extension line 2.", None))
         self.extLine2Hide.setText(_translate("DimStyle_Details_Dialog", "Ext. line 2", None))
         self.label_10.setText(_translate("DimStyle_Details_Dialog", "Extend beyond dim lines:", None))
-        self.extLineOffsetDimLine.setToolTip(_translate("DimStyle_Details_Dialog", "Specifies a distance to extend the extension lines above the dimension line.", None))
-        self.extLineOffsetOrigPoints.setToolTip(_translate("DimStyle_Details_Dialog", "Sets the distance to offset the extension lines from the points on the drawing that define the dimension.", None))
+        self.extLineOffsetDimLine.setToolTip(_translate("DimStyle_Details_Dialog",
+                                                        "Specifies a distance to extend the extension lines above the dimension line.",
+                                                        None))
+        self.extLineOffsetOrigPoints.setToolTip(_translate("DimStyle_Details_Dialog",
+                                                           "Sets the distance to offset the extension lines from the points on the drawing that define the dimension.",
+                                                           None))
         self.label_11.setText(_translate("DimStyle_Details_Dialog", "Offset from origin:", None))
-        self.extLineIsFixedLen.setToolTip(_translate("DimStyle_Details_Dialog", "Enables fixed length extension lines.", None))
+        self.extLineIsFixedLen.setToolTip(
+            _translate("DimStyle_Details_Dialog", "Enables fixed length extension lines.", None))
         self.extLineIsFixedLen.setText(_translate("DimStyle_Details_Dialog", "Fixed length extension lines", None))
         self.label_12.setText(_translate("DimStyle_Details_Dialog", "Length:", None))
-        self.extLineFixedLen.setToolTip(_translate("DimStyle_Details_Dialog", "Total length of the extension lines starting from the dimension line toward the dimension origin.", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.LineTab), _translate("DimStyle_Details_Dialog", "Lines", None))
+        self.extLineFixedLen.setToolTip(_translate("DimStyle_Details_Dialog",
+                                                   "Total length of the extension lines starting from the dimension line toward the dimension origin.",
+                                                   None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.LineTab),
+                                  _translate("DimStyle_Details_Dialog", "Lines", None))
         self.groupBox_3.setTitle(_translate("DimStyle_Details_Dialog", "Arrowheads", None))
-        self.block1Name.setToolTip(_translate("DimStyle_Details_Dialog", "Arrowhead for the first dimension line. When you change the first arrowhead type, the second arrowhead automatically changes to match it.", None))
+        self.block1Name.setToolTip(_translate("DimStyle_Details_Dialog",
+                                              "Arrowhead for the first dimension line. When you change the first arrowhead type, the second arrowhead automatically changes to match it.",
+                                              None))
         self.label_15.setText(_translate("DimStyle_Details_Dialog", "Arrowhead 1:", None))
-        self.block2Name.setToolTip(_translate("DimStyle_Details_Dialog", "Arrowhead for the second dimension line.", None))
+        self.block2Name.setToolTip(
+            _translate("DimStyle_Details_Dialog", "Arrowhead for the second dimension line.", None))
         self.label_18.setText(_translate("DimStyle_Details_Dialog", "Arrowhead 2:", None))
         self.blockLeaderName.setToolTip(_translate("DimStyle_Details_Dialog", "Arrowhead for the leader line.", None))
         self.label_19.setText(_translate("DimStyle_Details_Dialog", "Leader:", None))
-        self.blockWidth.setToolTip(_translate("DimStyle_Details_Dialog", "Arrowhead horizontal size in map units using the symbol scale factor = 1.", None))
+        self.blockWidth.setToolTip(_translate("DimStyle_Details_Dialog",
+                                              "Arrowhead horizontal size in map units using the symbol scale factor = 1.",
+                                              None))
         self.label_17.setText(_translate("DimStyle_Details_Dialog", "Arrowhead size:", None))
         self.blockScale.setToolTip(_translate("DimStyle_Details_Dialog", "Arrowhead scale.", None))
         self.label_20.setText(_translate("DimStyle_Details_Dialog", "Arrowhead scale:", None))
@@ -570,7 +663,8 @@ class Ui_DimStyle_Details_Dialog(object):
         self.arcSymbolPreceding.setText(_translate("DimStyle_Details_Dialog", "Preceding dimension text", None))
         self.arcSymbolAbove.setText(_translate("DimStyle_Details_Dialog", "Above dimension text", None))
         self.arcSymbolNone.setText(_translate("DimStyle_Details_Dialog", "None", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.SymbolTab), _translate("DimStyle_Details_Dialog", "Symbols and arrows", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.SymbolTab),
+                                  _translate("DimStyle_Details_Dialog", "Symbols and arrows", None))
         self.groupBox_9.setTitle(_translate("DimStyle_Details_Dialog", "Text appearance", None))
         self.label_26.setText(_translate("DimStyle_Details_Dialog", "Text height:", None))
         self.textHeight.setToolTip(_translate("DimStyle_Details_Dialog", "Text height in map units.", None))
@@ -578,54 +672,91 @@ class Ui_DimStyle_Details_Dialog(object):
         self.textFont.setToolTip(_translate("DimStyle_Details_Dialog", "Dimension text character type.", None))
         self.label_4.setText(_translate("DimStyle_Details_Dialog", "Color:", None))
         self.groupBox_10.setTitle(_translate("DimStyle_Details_Dialog", "Text placement", None))
-        self.textVerticalPos.setToolTip(_translate("DimStyle_Details_Dialog", "Controls the vertical placement of dimension text in relation to the dimension line.", None))
+        self.textVerticalPos.setToolTip(_translate("DimStyle_Details_Dialog",
+                                                   "Controls the vertical placement of dimension text in relation to the dimension line.",
+                                                   None))
         self.label_31.setText(_translate("DimStyle_Details_Dialog", "Vertical:", None))
         self.label_32.setText(_translate("DimStyle_Details_Dialog", "Horizontal:", None))
-        self.textHorizontalPos.setToolTip(_translate("DimStyle_Details_Dialog", "Controls the horizontal placement of dimension text along the dimension line, in relation to the extension lines.", None))
+        self.textHorizontalPos.setToolTip(_translate("DimStyle_Details_Dialog",
+                                                     "Controls the horizontal placement of dimension text along the dimension line, in relation to the extension lines.",
+                                                     None))
         self.label_33.setText(_translate("DimStyle_Details_Dialog", "View direction:", None))
-        self.textDirection.setToolTip(_translate("DimStyle_Details_Dialog", "Controls the dimension text viewing direction.", None))
-        self.textOffsetDist.setToolTip(_translate("DimStyle_Details_Dialog", "Sets the current text gap, which is the distance around the dimension text when the dimension line is broken to accommodate the dimension text.", None))
+        self.textDirection.setToolTip(
+            _translate("DimStyle_Details_Dialog", "Controls the dimension text viewing direction.", None))
+        self.textOffsetDist.setToolTip(_translate("DimStyle_Details_Dialog",
+                                                  "Sets the current text gap, which is the distance around the dimension text when the dimension line is broken to accommodate the dimension text.",
+                                                  None))
         self.label_34.setText(_translate("DimStyle_Details_Dialog", "Offset from dim line:", None))
         self.textAlignment_groupBox.setTitle(_translate("DimStyle_Details_Dialog", "Text alignment", None))
-        self.textRotModeHorizontal.setToolTip(_translate("DimStyle_Details_Dialog", "Places text in a horizontal position.", None))
+        self.textRotModeHorizontal.setToolTip(
+            _translate("DimStyle_Details_Dialog", "Places text in a horizontal position.", None))
         self.textRotModeHorizontal.setText(_translate("DimStyle_Details_Dialog", "Horizontal", None))
-        self.textRotModeAligned.setToolTip(_translate("DimStyle_Details_Dialog", "Text aligned with Dimension Line.", None))
+        self.textRotModeAligned.setToolTip(
+            _translate("DimStyle_Details_Dialog", "Text aligned with Dimension Line.", None))
         self.textRotModeAligned.setText(_translate("DimStyle_Details_Dialog", "Aligned with dimension line", None))
-        self.textRotModeISO.setToolTip(_translate("DimStyle_Details_Dialog", "Aligns text with the dimension line when text is inside the extension lines, but aligns it horizontally when text is outside the extension lines.", None))
+        self.textRotModeISO.setToolTip(_translate("DimStyle_Details_Dialog",
+                                                  "Aligns text with the dimension line when text is inside the extension lines, but aligns it horizontally when text is outside the extension lines.",
+                                                  None))
         self.textRotModeISO.setText(_translate("DimStyle_Details_Dialog", "ISO Standard", None))
         self.textRotModeFixedRot.setToolTip(_translate("DimStyle_Details_Dialog", "Place text with fixed angle.", None))
         self.textRotModeFixedRot.setText(_translate("DimStyle_Details_Dialog", "Fixed rotation", None))
-        self.textForcedRot.setToolTip(_translate("DimStyle_Details_Dialog", "Text angle  when fixed rotation mode is on.", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.TextTab), _translate("DimStyle_Details_Dialog", "Text", None))
+        self.textForcedRot.setToolTip(
+            _translate("DimStyle_Details_Dialog", "Text angle  when fixed rotation mode is on.", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.TextTab),
+                                  _translate("DimStyle_Details_Dialog", "Text", None))
         self.groupBox_12.setTitle(_translate("DimStyle_Details_Dialog", "Fit options", None))
-        self.label_35.setText(_translate("DimStyle_Details_Dialog", "If there isn\'t enaugh room to place both text and arrows inside extension lines, the first thing to move outside the extension lines is:", None))
-        self.textBlockAdjustWhicheverFitsBestOutside.setToolTip(_translate("DimStyle_Details_Dialog", "Moves either the text or the arrowheads outside the extension lines based on the best fit.", None))
-        self.textBlockAdjustWhicheverFitsBestOutside.setText(_translate("DimStyle_Details_Dialog", "Either text or arrows (best fit)", None))
-        self.textBlockAdjustFirstSymbolOutside.setToolTip(_translate("DimStyle_Details_Dialog", "Moves arrowheads outside the extension lines first, then text.", None))
+        self.label_35.setText(_translate("DimStyle_Details_Dialog",
+                                         "If there isn\'t enaugh room to place both text and arrows inside extension lines, the first thing to move outside the extension lines is:",
+                                         None))
+        self.textBlockAdjustWhicheverFitsBestOutside.setToolTip(_translate("DimStyle_Details_Dialog",
+                                                                           "Moves either the text or the arrowheads outside the extension lines based on the best fit.",
+                                                                           None))
+        self.textBlockAdjustWhicheverFitsBestOutside.setText(
+            _translate("DimStyle_Details_Dialog", "Either text or arrows (best fit)", None))
+        self.textBlockAdjustFirstSymbolOutside.setToolTip(
+            _translate("DimStyle_Details_Dialog", "Moves arrowheads outside the extension lines first, then text.",
+                       None))
         self.textBlockAdjustFirstSymbolOutside.setText(_translate("DimStyle_Details_Dialog", "Arrows", None))
-        self.textBlockAdjustFirstTextOutside.setToolTip(_translate("DimStyle_Details_Dialog", "Moves text outside the extension lines first, then arrowheads.", None))
+        self.textBlockAdjustFirstTextOutside.setToolTip(
+            _translate("DimStyle_Details_Dialog", "Moves text outside the extension lines first, then arrowheads.",
+                       None))
         self.textBlockAdjustFirstTextOutside.setText(_translate("DimStyle_Details_Dialog", "Text", None))
-        self.textBlockAdjustBothOutside.setToolTip(_translate("DimStyle_Details_Dialog", "When not enough space is available for text and arrowheads, moves both outside the extension lines.", None))
+        self.textBlockAdjustBothOutside.setToolTip(_translate("DimStyle_Details_Dialog",
+                                                              "When not enough space is available for text and arrowheads, moves both outside the extension lines.",
+                                                              None))
         self.textBlockAdjustBothOutside.setText(_translate("DimStyle_Details_Dialog", "Both text and arrows", None))
-        self.blockSuppressionForNoSpace.setToolTip(_translate("DimStyle_Details_Dialog", "Suppresses arrowheads if not enough space is available inside the extension lines.", None))
-        self.blockSuppressionForNoSpace.setText(_translate("DimStyle_Details_Dialog", "Suppress arrows if they don\'t fit inside ext. lines", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.AdjustTab), _translate("DimStyle_Details_Dialog", "Fit", None))
+        self.blockSuppressionForNoSpace.setToolTip(_translate("DimStyle_Details_Dialog",
+                                                              "Suppresses arrowheads if not enough space is available inside the extension lines.",
+                                                              None))
+        self.blockSuppressionForNoSpace.setText(
+            _translate("DimStyle_Details_Dialog", "Suppress arrows if they don\'t fit inside ext. lines", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.AdjustTab),
+                                  _translate("DimStyle_Details_Dialog", "Fit", None))
         self.groupBox_13.setTitle(_translate("DimStyle_Details_Dialog", "Linear dimensions", None))
         self.label_36.setText(_translate("DimStyle_Details_Dialog", "Precision:", None))
-        self.textDecimals.setToolTip(_translate("DimStyle_Details_Dialog", "Displays and sets the number of decimal places in the dimension text.", None))
-        self.textDecimalSep.setToolTip(_translate("DimStyle_Details_Dialog", "Sets the separator for decimal formats.", None))
+        self.textDecimals.setToolTip(_translate("DimStyle_Details_Dialog",
+                                                "Displays and sets the number of decimal places in the dimension text.",
+                                                None))
+        self.textDecimalSep.setToolTip(
+            _translate("DimStyle_Details_Dialog", "Sets the separator for decimal formats.", None))
         self.label_37.setText(_translate("DimStyle_Details_Dialog", "Decimal separator:", None))
-        self.textPrefix.setToolTip(_translate("DimStyle_Details_Dialog", "Includes a prefix that you specify in the dimension text.", None))
+        self.textPrefix.setToolTip(
+            _translate("DimStyle_Details_Dialog", "Includes a prefix that you specify in the dimension text.", None))
         self.label_38.setText(_translate("DimStyle_Details_Dialog", "Prefix:", None))
         self.label_39.setText(_translate("DimStyle_Details_Dialog", "Suffix:", None))
-        self.textSuffix.setToolTip(_translate("DimStyle_Details_Dialog", "Includes a suffix that you specify in the dimension text.", None))
+        self.textSuffix.setToolTip(
+            _translate("DimStyle_Details_Dialog", "Includes a suffix that you specify in the dimension text.", None))
         self.groupBox_14.setTitle(_translate("DimStyle_Details_Dialog", "Zero suppression", None))
-        self.textSuppressLeadingZeros.setToolTip(_translate("DimStyle_Details_Dialog", "Suppresses leading zeros in all decimal dimensions (0.5 becomes .5).", None))
+        self.textSuppressLeadingZeros.setToolTip(_translate("DimStyle_Details_Dialog",
+                                                            "Suppresses leading zeros in all decimal dimensions (0.5 becomes .5).",
+                                                            None))
         self.textSuppressLeadingZeros.setText(_translate("DimStyle_Details_Dialog", "Leading", None))
-        self.textDecimalZerosSuppression.setToolTip(_translate("DimStyle_Details_Dialog", "Suppresses trailing zeros in all decimal dimensions (5.50 becomes 5.5 and 5.0 becomes 5).", None))
+        self.textDecimalZerosSuppression.setToolTip(_translate("DimStyle_Details_Dialog",
+                                                               "Suppresses trailing zeros in all decimal dimensions (5.50 becomes 5.5 and 5.0 becomes 5).",
+                                                               None))
         self.textDecimalZerosSuppression.setText(_translate("DimStyle_Details_Dialog", "Trailing", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.PrimaryUnitTab), _translate("DimStyle_Details_Dialog", "Primary units", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.PrimaryUnitTab),
+                                  _translate("DimStyle_Details_Dialog", "Primary units", None))
         self.okButton.setText(_translate("DimStyle_Details_Dialog", "OK", None))
         self.cancelButton.setText(_translate("DimStyle_Details_Dialog", "Cancel", None))
         self.helpButton.setText(_translate("DimStyle_Details_Dialog", "?", None))
-

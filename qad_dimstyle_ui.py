@@ -7,7 +7,7 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt4 import QtCore, QtGui
+from qgis.PyQt import QtCore, QtGui
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -17,11 +17,14 @@ except AttributeError:
 
 try:
     _encoding = QtGui.QApplication.UnicodeUTF8
+
+
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig, _encoding)
 except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
+
 
 class Ui_DimStyle_Dialog(object):
     def setupUi(self, DimStyle_Dialog):
@@ -90,9 +93,11 @@ class Ui_DimStyle_Dialog(object):
         QtCore.QObject.connect(self.SetCurrent, QtCore.SIGNAL(_fromUtf8("clicked()")), DimStyle_Dialog.setCurrentStyle)
         QtCore.QObject.connect(self.new_2, QtCore.SIGNAL(_fromUtf8("clicked()")), DimStyle_Dialog.createNewStyle)
         QtCore.QObject.connect(self.Mod, QtCore.SIGNAL(_fromUtf8("clicked()")), DimStyle_Dialog.modStyle)
-        QtCore.QObject.connect(self.dimStyleList, QtCore.SIGNAL(_fromUtf8("customContextMenuRequested(QPoint)")), DimStyle_Dialog.displayPopupMenu)
+        QtCore.QObject.connect(self.dimStyleList, QtCore.SIGNAL(_fromUtf8("customContextMenuRequested(QPoint)")),
+                               DimStyle_Dialog.displayPopupMenu)
         QtCore.QObject.connect(self.TempMod, QtCore.SIGNAL(_fromUtf8("clicked()")), DimStyle_Dialog.temporaryModStyle)
-        QtCore.QObject.connect(self.helpButton, QtCore.SIGNAL(_fromUtf8("clicked()")), DimStyle_Dialog.ButtonHELP_Pressed)
+        QtCore.QObject.connect(self.helpButton, QtCore.SIGNAL(_fromUtf8("clicked()")),
+                               DimStyle_Dialog.ButtonHELP_Pressed)
         QtCore.QObject.connect(self.Diff, QtCore.SIGNAL(_fromUtf8("clicked()")), DimStyle_Dialog.showDiffBetweenStyles)
         QtCore.QObject.connect(self.closeButton, QtCore.SIGNAL(_fromUtf8("clicked()")), DimStyle_Dialog.accept)
         QtCore.QMetaObject.connectSlotsByName(DimStyle_Dialog)
@@ -102,15 +107,21 @@ class Ui_DimStyle_Dialog(object):
         self.label.setText(_translate("DimStyle_Dialog", "Current dimension style:", None))
         self.currentDimStyle.setText(_translate("DimStyle_Dialog", "none", None))
         self.label_2.setText(_translate("DimStyle_Dialog", "Styles", None))
-        self.SetCurrent.setToolTip(_translate("DimStyle_Dialog", "Sets the style selected under Styles to current. The current style is applied to dimensions you create.", None))
+        self.SetCurrent.setToolTip(_translate("DimStyle_Dialog",
+                                              "Sets the style selected under Styles to current. The current style is applied to dimensions you create.",
+                                              None))
         self.SetCurrent.setText(_translate("DimStyle_Dialog", "Set current", None))
         self.new_2.setToolTip(_translate("DimStyle_Dialog", "Define a new dimension style.", None))
         self.new_2.setText(_translate("DimStyle_Dialog", "New...", None))
         self.Mod.setToolTip(_translate("DimStyle_Dialog", "Modify the selected dimension style.", None))
         self.Mod.setText(_translate("DimStyle_Dialog", "Modify...", None))
-        self.TempMod.setToolTip(_translate("DimStyle_Dialog", "Set temporary modifications for the selected style. The temporary modifications will not saved.", None))
+        self.TempMod.setToolTip(_translate("DimStyle_Dialog",
+                                           "Set temporary modifications for the selected style. The temporary modifications will not saved.",
+                                           None))
         self.TempMod.setText(_translate("DimStyle_Dialog", "Override...", None))
-        self.Diff.setToolTip(_translate("DimStyle_Dialog", "Compare two dimension styles or list all the properties of one dimension style.", None))
+        self.Diff.setToolTip(_translate("DimStyle_Dialog",
+                                        "Compare two dimension styles or list all the properties of one dimension style.",
+                                        None))
         self.Diff.setText(_translate("DimStyle_Dialog", "Compare...", None))
         self.groupBox.setTitle(_translate("DimStyle_Dialog", "Description", None))
         self.descriptionSelectedStyle.setText(_translate("DimStyle_Dialog", "none", None))
@@ -118,4 +129,3 @@ class Ui_DimStyle_Dialog(object):
         self.selectedStyle.setText(_translate("DimStyle_Dialog", "none", None))
         self.closeButton.setText(_translate("DimStyle_Dialog", "Close", None))
         self.helpButton.setText(_translate("DimStyle_Dialog", "?", None))
-

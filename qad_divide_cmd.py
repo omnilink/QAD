@@ -24,21 +24,21 @@
 
 
 # Import the PyQt and QGIS libraries
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from qgis.PyQt.QtCore import *
+from qgis.PyQt.QtGui import *
 from qgis.core import *
 
 
-from qad_generic_cmd import QadCommandClass
-from qad_msg import QadMsg
-from qad_getpoint import *
-from qad_entsel_cmd import QadEntSelClass
-from qad_textwindow import *
-from qad_entity import *
-from qad_variables import *
-import qad_utils
-import qad_layer
-from qad_dim import *
+from qad.qad_generic_cmd import QadCommandClass
+from qad.qad_msg import QadMsg
+from qad.qad_getpoint import *
+from qad.qad_entsel_cmd import QadEntSelClass
+from qad.qad_textwindow import *
+from qad.qad_entity import *
+from qad.qad_variables import *
+import qad.qad_utils
+import qad.qad_layer
+from qad.qad_dim import *
 
 
 #===============================================================================

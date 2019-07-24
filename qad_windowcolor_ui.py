@@ -7,7 +7,7 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt4 import QtCore, QtGui
+from qgis.PyQt import QtCore, QtGui
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -17,11 +17,14 @@ except AttributeError:
 
 try:
     _encoding = QtGui.QApplication.UnicodeUTF8
+
+
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig, _encoding)
 except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
+
 
 class Ui_WindowColor_Dialog(object):
     def setupUi(self, WindowColor_Dialog):
@@ -74,12 +77,18 @@ class Ui_WindowColor_Dialog(object):
         self.label_4.setObjectName(_fromUtf8("label_4"))
 
         self.retranslateUi(WindowColor_Dialog)
-        QtCore.QObject.connect(self.Button_ApplyClose, QtCore.SIGNAL(_fromUtf8("clicked()")), WindowColor_Dialog.Button_ApplyClose_Pressed)
-        QtCore.QObject.connect(self.Button_Cancel, QtCore.SIGNAL(_fromUtf8("clicked()")), WindowColor_Dialog.Button_Cancel_Pressed)
-        QtCore.QObject.connect(self.Button_Help, QtCore.SIGNAL(_fromUtf8("clicked()")), WindowColor_Dialog.ButtonHELP_Pressed)
-        QtCore.QObject.connect(self.Button_RestoreCurrElement, QtCore.SIGNAL(_fromUtf8("clicked()")), WindowColor_Dialog.Button_RestoreCurrElement_clicked)
-        QtCore.QObject.connect(self.Button_RestoreCurrContext, QtCore.SIGNAL(_fromUtf8("clicked()")), WindowColor_Dialog.Button_RestoreCurrContext_clicked)
-        QtCore.QObject.connect(self.Button_RestoreAllContext, QtCore.SIGNAL(_fromUtf8("clicked()")), WindowColor_Dialog.Button_RestoreAllContext_clicked)
+        QtCore.QObject.connect(self.Button_ApplyClose, QtCore.SIGNAL(_fromUtf8("clicked()")),
+                               WindowColor_Dialog.Button_ApplyClose_Pressed)
+        QtCore.QObject.connect(self.Button_Cancel, QtCore.SIGNAL(_fromUtf8("clicked()")),
+                               WindowColor_Dialog.Button_Cancel_Pressed)
+        QtCore.QObject.connect(self.Button_Help, QtCore.SIGNAL(_fromUtf8("clicked()")),
+                               WindowColor_Dialog.ButtonHELP_Pressed)
+        QtCore.QObject.connect(self.Button_RestoreCurrElement, QtCore.SIGNAL(_fromUtf8("clicked()")),
+                               WindowColor_Dialog.Button_RestoreCurrElement_clicked)
+        QtCore.QObject.connect(self.Button_RestoreCurrContext, QtCore.SIGNAL(_fromUtf8("clicked()")),
+                               WindowColor_Dialog.Button_RestoreCurrContext_clicked)
+        QtCore.QObject.connect(self.Button_RestoreAllContext, QtCore.SIGNAL(_fromUtf8("clicked()")),
+                               WindowColor_Dialog.Button_RestoreAllContext_clicked)
         QtCore.QMetaObject.connectSlotsByName(WindowColor_Dialog)
 
     def retranslateUi(self, WindowColor_Dialog):
@@ -94,4 +103,3 @@ class Ui_WindowColor_Dialog(object):
         self.Button_RestoreAllContext.setText(_translate("WindowColor_Dialog", "Restore all context", None))
         self.label_3.setText(_translate("WindowColor_Dialog", "Preview:", None))
         self.label_4.setText(_translate("WindowColor_Dialog", "Color:", None))
-

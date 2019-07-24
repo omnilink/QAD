@@ -22,48 +22,45 @@
  ***************************************************************************/
 """
 
-
 # Import the PyQt and QGIS libraries
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from qgis.PyQt.QtCore import *
+from qgis.PyQt.QtGui import *
 from qgis.core import *
 from qgis.core import QgsApplication
 
+from qad.qad_options_dlg import QadOPTIONSDialog
 
-from qad_options_dlg import QadOPTIONSDialog
-
-
-from qad_generic_cmd import QadCommandClass
-from qad_msg import QadMsg
+from qad.qad_generic_cmd import QadCommandClass
+from qad.qad_msg import QadMsg
 
 
 # Classe che gestisce il comando OPTIONS
 class QadOPTIONSCommandClass(QadCommandClass):
-   
-   def instantiateNewCmd(self):
-      """ istanzia un nuovo comando dello stesso tipo """
-      return QadOPTIONSCommandClass(self.plugIn)
-   
-   def getName(self):
-      return QadMsg.translate("Command_list", "OPTIONS")
 
-   def getEnglishName(self):
-      return "OPTIONS"
+    def instantiateNewCmd(self):
+        """ istanzia un nuovo comando dello stesso tipo """
+        return QadOPTIONSCommandClass(self.plugIn)
 
-   def connectQAction(self, action):
-      QObject.connect(action, SIGNAL("triggered()"), self.plugIn.runOPTIONSCommand)
+    def getName(self):
+        return QadMsg.translate("Command_list", "OPTIONS")
 
-   def getIcon(self):
-      return QIcon(":/plugins/qad/icons/options.png")
+    def getEnglishName(self):
+        return "OPTIONS"
 
-   def getNote(self):
-      # impostare le note esplicative del comando
-      return QadMsg.translate("Command_OPTIONS", "QAD Options.")
-   
-   def __init__(self, plugIn):
-      QadCommandClass.__init__(self, plugIn)
-            
-   def run(self, msgMapTool = False, msg = None):
-      Form = QadOPTIONSDialog(self.plugIn)
-      Form.exec_()
-      return True
+    def connectQAction(self, action):
+        QObject.connect(action, SIGNAL("triggered()"), self.plugIn.runOPTIONSCommand)
+
+    def getIcon(self):
+        return QIcon(":/plugins/qad/icons/options.png")
+
+    def getNote(self):
+        # impostare le note esplicative del comando
+        return QadMsg.translate("Command_OPTIONS", "QAD Options.")
+
+    def __init__(self, plugIn):
+        QadCommandClass.__init__(self, plugIn)
+
+    def run(self, msgMapTool=False, msg=None):
+        Form = QadOPTIONSDialog(self.plugIn)
+        Form.exec_()
+        return True

@@ -24,13 +24,13 @@
 
 
 # Import the PyQt and QGIS libraries
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from qgis.PyQt.QtCore import *
+from qgis.PyQt.QtGui import *
 from qgis.core import *
 
 
-from qad_generic_cmd import QadCommandClass
-from qad_msg import QadMsg
+from qad.qad_generic_cmd import QadCommandClass
+from qad.qad_msg import QadMsg
 
 
 # Classe che gestisce il comando ID

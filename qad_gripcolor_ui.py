@@ -7,7 +7,7 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt4 import QtCore, QtGui
+from qgis.PyQt import QtCore, QtGui
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -17,11 +17,14 @@ except AttributeError:
 
 try:
     _encoding = QtGui.QApplication.UnicodeUTF8
+
+
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig, _encoding)
 except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
+
 
 class Ui_GripColor_Dialog(object):
     def setupUi(self, GripColor_Dialog):
@@ -32,7 +35,8 @@ class Ui_GripColor_Dialog(object):
         self.buttonBox = QtGui.QDialogButtonBox(GripColor_Dialog)
         self.buttonBox.setGeometry(QtCore.QRect(60, 170, 331, 32))
         self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
-        self.buttonBox.setStandardButtons(QtGui.QDialogButtonBox.Cancel|QtGui.QDialogButtonBox.Help|QtGui.QDialogButtonBox.Ok)
+        self.buttonBox.setStandardButtons(
+            QtGui.QDialogButtonBox.Cancel | QtGui.QDialogButtonBox.Help | QtGui.QDialogButtonBox.Ok)
         self.buttonBox.setObjectName(_fromUtf8("buttonBox"))
         self.groupBox = QtGui.QGroupBox(GripColor_Dialog)
         self.groupBox.setGeometry(QtCore.QRect(10, 10, 381, 141))
@@ -68,8 +72,10 @@ class Ui_GripColor_Dialog(object):
 
         self.retranslateUi(GripColor_Dialog)
         QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("rejected()")), GripColor_Dialog.reject)
-        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("helpRequested()")), GripColor_Dialog.ButtonHELP_Pressed)
-        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("accepted()")), GripColor_Dialog.ButtonBOX_Accepted)
+        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("helpRequested()")),
+                               GripColor_Dialog.ButtonHELP_Pressed)
+        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("accepted()")),
+                               GripColor_Dialog.ButtonBOX_Accepted)
         QtCore.QMetaObject.connectSlotsByName(GripColor_Dialog)
 
     def retranslateUi(self, GripColor_Dialog):
@@ -79,4 +85,3 @@ class Ui_GripColor_Dialog(object):
         self.label_2.setText(_translate("GripColor_Dialog", "Hover grip color:", None))
         self.label_3.setText(_translate("GripColor_Dialog", "Selected grip color:", None))
         self.label_4.setText(_translate("GripColor_Dialog", "Grip contour color:", None))
-

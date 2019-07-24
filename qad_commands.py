@@ -25,58 +25,58 @@
 
 
 # Import the PyQt and QGIS libraries
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from qgis.PyQt.QtCore import *
+from qgis.PyQt.QtGui import *
 from qgis.core import *
 from qgis.gui import *
 
 import sys, traceback
 
-from qad_maptool import QadMapTool, QadVirtualSelCommandClass, QadVirtualGripCommandsClass
-from qad_msg import QadMsg
-from qad_cmd_aliases import *
-from qad_variables import QadVariables
+from qad.qad_maptool import QadMapTool, QadVirtualSelCommandClass, QadVirtualGripCommandsClass
+from qad.qad_msg import QadMsg
+from qad.qad_cmd_aliases import *
+from qad.qad_variables import QadVariables
 
-from qad_getpoint import *
-from qad_generic_cmd import QadCommandClass
-from qad_id_cmd import QadIDCommandClass
-from qad_setcurrlayerbygraph_cmd import QadSETCURRLAYERBYGRAPHCommandClass, QadSETCURRUPDATEABLELAYERBYGRAPHCommandClass
-from qad_setvar_cmd import QadSETVARCommandClass
-from qad_pline_cmd import QadPLINECommandClass
-from qad_arc_cmd import QadARCCommandClass
-from qad_circle_cmd import QadCIRCLECommandClass
-from qad_dsettings_cmd import QadDSETTINGSCommandClass
-from qad_line_cmd import QadLINECommandClass
-from qad_erase_cmd import QadERASECommandClass
-from qad_mpolygon_cmd import QadMPOLYGONCommandClass
-from qad_mbuffer_cmd import QadMBUFFERCommandClass
-from qad_rotate_cmd import QadROTATECommandClass
-from qad_move_cmd import QadMOVECommandClass
-from qad_scale_cmd import QadSCALECommandClass
-from qad_copy_cmd import QadCOPYCommandClass
-from qad_offset_cmd import QadOFFSETCommandClass
-from qad_extend_cmd import QadEXTENDCommandClass
-from qad_trim_cmd import QadTRIMCommandClass
-from qad_rectangle_cmd import QadRECTANGLECommandClass
-from qad_mirror_cmd import QadMIRRORCommandClass
-from qad_undoredo_cmd import QadUNDOCommandClass, QadREDOCommandClass
-from qad_insert_cmd import QadINSERTCommandClass
-from qad_text_cmd import QadTEXTCommandClass
-from qad_stretch_cmd import QadSTRETCHCommandClass
-from qad_break_cmd import QadBREAKCommandClass
-from qad_pedit_cmd import QadPEDITCommandClass
-from qad_fillet_cmd import QadFILLETCommandClass
-from qad_polygon_cmd import QadPOLYGONCommandClass
-from qad_dim_cmd import QadDIMLINEARCommandClass, QadDIMALIGNEDCommandClass, QadDIMARCCommandClass
-from qad_dimstyle_cmd import QadDIMSTYLECommandClass
-from qad_lengthen_cmd import QadLENGTHENCommandClass
-from qad_help_cmd import QadHELPCommandClass
-from qad_options_cmd import QadOPTIONSCommandClass
-from qad_mapmpedit_cmd import QadMAPMPEDITCommandClass
-from qad_joindisjoin_cmd import QadJOINCommandClass, QadDISJOINCommandClass
-from qad_array_cmd import QadARRAYCommandClass, QadARRAYRECTCommandClass, QadARRAYPATHCommandClass, QadARRAYPOLARCommandClass
-from qad_divide_cmd import QadDIVIDECommandClass
-from qad_measure_cmd import QadMEASURECommandClass
+from qad.qad_getpoint import *
+from qad.qad_generic_cmd import QadCommandClass
+from qad.qad_id_cmd import QadIDCommandClass
+from qad.qad_setcurrlayerbygraph_cmd import QadSETCURRLAYERBYGRAPHCommandClass, QadSETCURRUPDATEABLELAYERBYGRAPHCommandClass
+from qad.qad_setvar_cmd import QadSETVARCommandClass
+from qad.qad_pline_cmd import QadPLINECommandClass
+from qad.qad_arc_cmd import QadARCCommandClass
+from qad.qad_circle_cmd import QadCIRCLECommandClass
+from qad.qad_dsettings_cmd import QadDSETTINGSCommandClass
+from qad.qad_line_cmd import QadLINECommandClass
+from qad.qad_erase_cmd import QadERASECommandClass
+from qad.qad_mpolygon_cmd import QadMPOLYGONCommandClass
+from qad.qad_mbuffer_cmd import QadMBUFFERCommandClass
+from qad.qad_rotate_cmd import QadROTATECommandClass
+from qad.qad_move_cmd import QadMOVECommandClass
+from qad.qad_scale_cmd import QadSCALECommandClass
+from qad.qad_copy_cmd import QadCOPYCommandClass
+from qad.qad_offset_cmd import QadOFFSETCommandClass
+from qad.qad_extend_cmd import QadEXTENDCommandClass
+from qad.qad_trim_cmd import QadTRIMCommandClass
+from qad.qad_rectangle_cmd import QadRECTANGLECommandClass
+from qad.qad_mirror_cmd import QadMIRRORCommandClass
+from qad.qad_undoredo_cmd import QadUNDOCommandClass, QadREDOCommandClass
+from qad.qad_insert_cmd import QadINSERTCommandClass
+from qad.qad_text_cmd import QadTEXTCommandClass
+from qad.qad_stretch_cmd import QadSTRETCHCommandClass
+from qad.qad_break_cmd import QadBREAKCommandClass
+from qad.qad_pedit_cmd import QadPEDITCommandClass
+from qad.qad_fillet_cmd import QadFILLETCommandClass
+from qad.qad_polygon_cmd import QadPOLYGONCommandClass
+from qad.qad_dim_cmd import QadDIMLINEARCommandClass, QadDIMALIGNEDCommandClass, QadDIMARCCommandClass
+from qad.qad_dimstyle_cmd import QadDIMSTYLECommandClass
+from qad.qad_lengthen_cmd import QadLENGTHENCommandClass
+from qad.qad_help_cmd import QadHELPCommandClass
+from qad.qad_options_cmd import QadOPTIONSCommandClass
+from qad.qad_mapmpedit_cmd import QadMAPMPEDITCommandClass
+from qad.qad_joindisjoin_cmd import QadJOINCommandClass, QadDISJOINCommandClass
+from qad.qad_array_cmd import QadARRAYCommandClass, QadARRAYRECTCommandClass, QadARRAYPATHCommandClass, QadARRAYPOLARCommandClass
+from qad.qad_divide_cmd import QadDIVIDECommandClass
+from qad.qad_measure_cmd import QadMEASURECommandClass
 
 
 # Classe che gestisce i comandi di Qad

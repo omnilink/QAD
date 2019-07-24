@@ -22,43 +22,41 @@
  ***************************************************************************/
 """
 
-
 # Import the PyQt and QGIS libraries
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from qgis.PyQt.QtCore import *
+from qgis.PyQt.QtGui import *
 from qgis.core import *
 
-
-from qad_generic_cmd import QadCommandClass
-from qad_msg import QadMsg, qadShowPluginHelp
+from qad.qad_generic_cmd import QadCommandClass
+from qad.qad_msg import QadMsg, qadShowPluginHelp
 
 
 # Classe che gestisce il comando HELP
 class QadHELPCommandClass(QadCommandClass):
 
-   def instantiateNewCmd(self):
-      """ istanzia un nuovo comando dello stesso tipo """
-      return QadHELPCommandClass(self.plugIn)
+    def instantiateNewCmd(self):
+        """ istanzia un nuovo comando dello stesso tipo """
+        return QadHELPCommandClass(self.plugIn)
 
-   def getName(self):
-      return QadMsg.translate("Command_list", "HELP")
+    def getName(self):
+        return QadMsg.translate("Command_list", "HELP")
 
-   def getEnglishName(self):
-      return "HELP"
+    def getEnglishName(self):
+        return "HELP"
 
-   def connectQAction(self, action):
-      QObject.connect(action, SIGNAL("triggered()"), self.plugIn.runHELPCommand)
+    def connectQAction(self, action):
+        QObject.connect(action, SIGNAL("triggered()"), self.plugIn.runHELPCommand)
 
-   def getIcon(self):
-      return QIcon(":/plugins/qad/icons/help.png")
+    def getIcon(self):
+        return QIcon(":/plugins/qad/icons/help.png")
 
-   def getNote(self):
-      # impostare le note esplicative del comando
-      return QadMsg.translate("Command_HELP", "The QAD manual will be showed.")
-   
-   def __init__(self, plugIn):
-      QadCommandClass.__init__(self, plugIn)
-        
-   def run(self, msgMapTool = False, msg = None):
-      qadShowPluginHelp()       
-      return True
+    def getNote(self):
+        # impostare le note esplicative del comando
+        return QadMsg.translate("Command_HELP", "The QAD manual will be showed.")
+
+    def __init__(self, plugIn):
+        QadCommandClass.__init__(self, plugIn)
+
+    def run(self, msgMapTool=False, msg=None):
+        qadShowPluginHelp()
+        return True

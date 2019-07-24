@@ -7,7 +7,7 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt4 import QtCore, QtGui
+from qgis.PyQt import QtCore, QtGui
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -17,11 +17,14 @@ except AttributeError:
 
 try:
     _encoding = QtGui.QApplication.UnicodeUTF8
+
+
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig, _encoding)
 except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
+
 
 class Ui_DimStyle_Diff_Dialog(object):
     def setupUi(self, DimStyle_Diff_Dialog):
@@ -75,10 +78,14 @@ class Ui_DimStyle_Diff_Dialog(object):
         self.copyButton.setObjectName(_fromUtf8("copyButton"))
 
         self.retranslateUi(DimStyle_Diff_Dialog)
-        QtCore.QObject.connect(self.helpButton, QtCore.SIGNAL(_fromUtf8("clicked()")), DimStyle_Diff_Dialog.ButtonHELP_Pressed)
-        QtCore.QObject.connect(self.dimStyle1, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), DimStyle_Diff_Dialog.DimStyleName1Changed)
-        QtCore.QObject.connect(self.dimStyle2, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), DimStyle_Diff_Dialog.DimStyleName2Changed)
-        QtCore.QObject.connect(self.copyButton, QtCore.SIGNAL(_fromUtf8("clicked()")), DimStyle_Diff_Dialog.copyToClipboard)
+        QtCore.QObject.connect(self.helpButton, QtCore.SIGNAL(_fromUtf8("clicked()")),
+                               DimStyle_Diff_Dialog.ButtonHELP_Pressed)
+        QtCore.QObject.connect(self.dimStyle1, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")),
+                               DimStyle_Diff_Dialog.DimStyleName1Changed)
+        QtCore.QObject.connect(self.dimStyle2, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")),
+                               DimStyle_Diff_Dialog.DimStyleName2Changed)
+        QtCore.QObject.connect(self.copyButton, QtCore.SIGNAL(_fromUtf8("clicked()")),
+                               DimStyle_Diff_Dialog.copyToClipboard)
         QtCore.QObject.connect(self.closeButton, QtCore.SIGNAL(_fromUtf8("clicked()")), DimStyle_Diff_Dialog.accept)
         QtCore.QMetaObject.connectSlotsByName(DimStyle_Diff_Dialog)
 
@@ -87,10 +94,14 @@ class Ui_DimStyle_Diff_Dialog(object):
         self.label.setText(_translate("DimStyle_Diff_Dialog", "Compare:", None))
         self.label_2.setText(_translate("DimStyle_Diff_Dialog", "With:", None))
         self.dimStyle1.setToolTip(_translate("DimStyle_Diff_Dialog", "Specify the first dimension style.", None))
-        self.dimStyle2.setToolTip(_translate("DimStyle_Diff_Dialog", "Specify the second dimension style. If you set the second style as the first, all dimension style properties will displayed.", None))
+        self.dimStyle2.setToolTip(_translate("DimStyle_Diff_Dialog",
+                                             "Specify the second dimension style. If you set the second style as the first, all dimension style properties will displayed.",
+                                             None))
         self.msg.setText(_translate("DimStyle_Diff_Dialog", "TextLabel", None))
         self.closeButton.setText(_translate("DimStyle_Diff_Dialog", "Close", None))
         self.helpButton.setText(_translate("DimStyle_Diff_Dialog", "?", None))
-        self.tableWidget.setToolTip(_translate("DimStyle_Diff_Dialog", "<html><head/><body><p>Display the result of comparing dimension styles.If you compare two different styles, the settings that are different between the two dimension styles, their current settings, and brief descriptions are listed. If you set the second style as the first, all dimension style properties will displayed.</p></body></html>", None))
-        self.copyButton.setToolTip(_translate("DimStyle_Diff_Dialog", "Copy the result of comparing into the clipboard.", None))
-
+        self.tableWidget.setToolTip(_translate("DimStyle_Diff_Dialog",
+                                               "<html><head/><body><p>Display the result of comparing dimension styles.If you compare two different styles, the settings that are different between the two dimension styles, their current settings, and brief descriptions are listed. If you set the second style as the first, all dimension style properties will displayed.</p></body></html>",
+                                               None))
+        self.copyButton.setToolTip(
+            _translate("DimStyle_Diff_Dialog", "Copy the result of comparing into the clipboard.", None))

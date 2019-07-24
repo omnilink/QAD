@@ -20,11 +20,9 @@
  ***************************************************************************/
 """
 
+from qgis.PyQt import QtCore, QtGui
 
-from PyQt4 import QtCore, QtGui
-
-
-from qad_msg import QadMsg
+from qad.qad_msg import QadMsg
 
 
 class Ui_QadTextWindow(object):
@@ -35,12 +33,13 @@ class Ui_QadTextWindow(object):
         QadTextWindow.resize(642, 193)
         QadTextWindow.setMinimumSize(100, 20)
         QadTextWindow.setMaximumSize(QtCore.QSize(524287, 524287))
-                
+
         self.retranslateUi(QadTextWindow)
         QtCore.QMetaObject.connectSlotsByName(QadTextWindow)
 
     def retranslateUi(self, QadTextWindow):
-       QadTextWindow.setWindowTitle(QadMsg.translate("Text_window", "QAD text window"))
+        QadTextWindow.setWindowTitle(QadMsg.translate("Text_window", "QAD text window"))
+
 
 class Ui_QadCmdSuggestWindow(object):
     def setupUi(self, QadCmdSuggestWindow):
@@ -52,7 +51,5 @@ class Ui_QadCmdSuggestWindow(object):
         self.vboxlayout = QtGui.QVBoxLayout(self.dockWidgetContents)
         self.vboxlayout.setObjectName("QadCmdsListWindowVBoxLayout")
         self.vboxlayout.setMargin(0)
-        QadCmdSuggestWindow.setLayout(self.vboxlayout)        
+        QadCmdSuggestWindow.setLayout(self.vboxlayout)
         QtCore.QMetaObject.connectSlotsByName(QadCmdSuggestWindow)
-
-

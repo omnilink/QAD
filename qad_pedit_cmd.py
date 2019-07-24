@@ -23,25 +23,25 @@
 """
 
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from qgis.PyQt.QtCore import *
+from qgis.PyQt.QtGui import *
 from qgis.core import *
 from qgis.gui import *
 
 
-from qad_generic_cmd import QadCommandClass
-from qad_getdist_cmd import QadGetDistClass
-from qad_snapper import *
-from qad_pedit_maptool import *
-from qad_ssget_cmd import QadSSGetClass
-from qad_msg import QadMsg
-from qad_textwindow import *
-import qad_utils
-import qad_layer
-from qad_variables import *
-from qad_snappointsdisplaymanager import *
-from qad_dim import QadDimStyles
-import qad_grip
+from qad.qad_generic_cmd import QadCommandClass
+from qad.qad_getdist_cmd import QadGetDistClass
+from qad.qad_snapper import *
+from qad.qad_pedit_maptool import *
+from qad.qad_ssget_cmd import QadSSGetClass
+from qad.qad_msg import QadMsg
+from qad.qad_textwindow import *
+import qad.qad_utils
+import qad.qad_layer
+from qad.qad_variables import *
+from qad.qad_snappointsdisplaymanager import *
+from qad.qad_dim import QadDimStyles
+import qad.qad_grip
 
 
 # Classe che gestisce il comando PEDIT

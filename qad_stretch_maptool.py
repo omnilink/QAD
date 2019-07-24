@@ -23,22 +23,22 @@
 """
 
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from qgis.PyQt.QtCore import *
+from qgis.PyQt.QtGui import *
 from qgis.core import *
 from qgis.gui import *
 import math
 
 
-import qad_utils
-from qad_snapper import *
-from qad_snappointsdisplaymanager import *
-from qad_variables import *
-from qad_getpoint import *
-from qad_dim import *
-import qad_stretch_fun
-from qad_highlight import QadHighlight
-from qad_msg import QadMsg
+import qad.qad_utils
+from qad.qad_snapper import *
+from qad.qad_snappointsdisplaymanager import *
+from qad.qad_variables import *
+from qad.qad_getpoint import *
+from qad.qad_dim import *
+import qad.qad_stretch_fun
+from qad.qad_highlight import QadHighlight
+from qad.qad_msg import QadMsg
 
 
 #===============================================================================

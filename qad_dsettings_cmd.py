@@ -22,48 +22,45 @@
  ***************************************************************************/
 """
 
-
 # Import the PyQt and QGIS libraries
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from qgis.PyQt.QtCore import *
+from qgis.PyQt.QtGui import *
 from qgis.core import *
 from qgis.core import QgsApplication
 
+from qad.qad_dsettings_dlg import QadDSETTINGSDialog
 
-from qad_dsettings_dlg import QadDSETTINGSDialog
-
-
-from qad_generic_cmd import QadCommandClass
-from qad_msg import QadMsg
+from qad.qad_generic_cmd import QadCommandClass
+from qad.qad_msg import QadMsg
 
 
 # Classe che gestisce il comando DSETTINGS
 class QadDSETTINGSCommandClass(QadCommandClass):
-   
-   def instantiateNewCmd(self):
-      """ istanzia un nuovo comando dello stesso tipo """
-      return QadDSETTINGSCommandClass(self.plugIn)
-   
-   def getName(self):
-      return QadMsg.translate("Command_list", "DSETTINGS")
 
-   def getEnglishName(self):
-      return "DSETTINGS"
+    def instantiateNewCmd(self):
+        """ istanzia un nuovo comando dello stesso tipo """
+        return QadDSETTINGSCommandClass(self.plugIn)
 
-   def connectQAction(self, action):
-      QObject.connect(action, SIGNAL("triggered()"), self.plugIn.runDSETTINGSCommand)
+    def getName(self):
+        return QadMsg.translate("Command_list", "DSETTINGS")
 
-   def getIcon(self):
-      return QIcon(":/plugins/qad/icons/dsettings.png")
+    def getEnglishName(self):
+        return "DSETTINGS"
 
-   def getNote(self):
-      # impostare le note esplicative del comando
-      return QadMsg.translate("Command_DSETTINGS", "Drafting Settings (snaps, etc.).")
-   
-   def __init__(self, plugIn):
-      QadCommandClass.__init__(self, plugIn)
-            
-   def run(self, msgMapTool = False, msg = None):
-      Form = QadDSETTINGSDialog(self.plugIn)
-      Form.exec_()
-      return True
+    def connectQAction(self, action):
+        QObject.connect(action, SIGNAL("triggered()"), self.plugIn.runDSETTINGSCommand)
+
+    def getIcon(self):
+        return QIcon(":/plugins/qad/icons/dsettings.png")
+
+    def getNote(self):
+        # impostare le note esplicative del comando
+        return QadMsg.translate("Command_DSETTINGS", "Drafting Settings (snaps, etc.).")
+
+    def __init__(self, plugIn):
+        QadCommandClass.__init__(self, plugIn)
+
+    def run(self, msgMapTool=False, msg=None):
+        Form = QadDSETTINGSDialog(self.plugIn)
+        Form.exec_()
+        return True

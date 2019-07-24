@@ -7,7 +7,7 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt4 import QtCore, QtGui
+from qgis.PyQt import QtCore, QtGui
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -17,11 +17,14 @@ except AttributeError:
 
 try:
     _encoding = QtGui.QApplication.UnicodeUTF8
+
+
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig, _encoding)
 except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
+
 
 class Ui_Options_Dialog(object):
     def setupUi(self, Options_Dialog):
@@ -35,7 +38,8 @@ class Ui_Options_Dialog(object):
         self.buttonBox = QtGui.QDialogButtonBox(Options_Dialog)
         self.buttonBox.setGeometry(QtCore.QRect(240, 350, 341, 32))
         self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
-        self.buttonBox.setStandardButtons(QtGui.QDialogButtonBox.Apply|QtGui.QDialogButtonBox.Cancel|QtGui.QDialogButtonBox.Help|QtGui.QDialogButtonBox.Ok)
+        self.buttonBox.setStandardButtons(
+            QtGui.QDialogButtonBox.Apply | QtGui.QDialogButtonBox.Cancel | QtGui.QDialogButtonBox.Help | QtGui.QDialogButtonBox.Ok)
         self.buttonBox.setObjectName(_fromUtf8("buttonBox"))
         self.tabWidget = QtGui.QTabWidget(Options_Dialog)
         self.tabWidget.setGeometry(QtCore.QRect(10, 10, 571, 331))
@@ -51,7 +55,8 @@ class Ui_Options_Dialog(object):
         self.Button_TextWindowColor.setObjectName(_fromUtf8("Button_TextWindowColor"))
         self.checkBox_INPUTSEARCHOPTIONS_AUTOCOMPLETE = QtGui.QCheckBox(self.groupBox)
         self.checkBox_INPUTSEARCHOPTIONS_AUTOCOMPLETE.setGeometry(QtCore.QRect(20, 100, 211, 17))
-        self.checkBox_INPUTSEARCHOPTIONS_AUTOCOMPLETE.setObjectName(_fromUtf8("checkBox_INPUTSEARCHOPTIONS_AUTOCOMPLETE"))
+        self.checkBox_INPUTSEARCHOPTIONS_AUTOCOMPLETE.setObjectName(
+            _fromUtf8("checkBox_INPUTSEARCHOPTIONS_AUTOCOMPLETE"))
         self.checkBox_SHOWTEXTWINDOW = QtGui.QCheckBox(self.groupBox)
         self.checkBox_SHOWTEXTWINDOW.setGeometry(QtCore.QRect(10, 20, 231, 20))
         self.checkBox_SHOWTEXTWINDOW.setObjectName(_fromUtf8("checkBox_SHOWTEXTWINDOW"))
@@ -74,13 +79,16 @@ class Ui_Options_Dialog(object):
         self.checkBox_INPUTSEARCHOPTIONS_ON.setObjectName(_fromUtf8("checkBox_INPUTSEARCHOPTIONS_ON"))
         self.checkBox_INPUTSEARCHOPTIONS_DISPLAY_LIST = QtGui.QCheckBox(self.groupBox)
         self.checkBox_INPUTSEARCHOPTIONS_DISPLAY_LIST.setGeometry(QtCore.QRect(20, 120, 211, 17))
-        self.checkBox_INPUTSEARCHOPTIONS_DISPLAY_LIST.setObjectName(_fromUtf8("checkBox_INPUTSEARCHOPTIONS_DISPLAY_LIST"))
+        self.checkBox_INPUTSEARCHOPTIONS_DISPLAY_LIST.setObjectName(
+            _fromUtf8("checkBox_INPUTSEARCHOPTIONS_DISPLAY_LIST"))
         self.checkBox_INPUTSEARCHOPTIONS_DISPLAY_ICON = QtGui.QCheckBox(self.groupBox)
         self.checkBox_INPUTSEARCHOPTIONS_DISPLAY_ICON.setGeometry(QtCore.QRect(20, 140, 211, 17))
-        self.checkBox_INPUTSEARCHOPTIONS_DISPLAY_ICON.setObjectName(_fromUtf8("checkBox_INPUTSEARCHOPTIONS_DISPLAY_ICON"))
+        self.checkBox_INPUTSEARCHOPTIONS_DISPLAY_ICON.setObjectName(
+            _fromUtf8("checkBox_INPUTSEARCHOPTIONS_DISPLAY_ICON"))
         self.checkBox_INPUTSEARCHOPTIONS_EXCLUDE_SYS_VAR = QtGui.QCheckBox(self.groupBox)
         self.checkBox_INPUTSEARCHOPTIONS_EXCLUDE_SYS_VAR.setGeometry(QtCore.QRect(20, 160, 211, 17))
-        self.checkBox_INPUTSEARCHOPTIONS_EXCLUDE_SYS_VAR.setObjectName(_fromUtf8("checkBox_INPUTSEARCHOPTIONS_EXCLUDE_SYS_VAR"))
+        self.checkBox_INPUTSEARCHOPTIONS_EXCLUDE_SYS_VAR.setObjectName(
+            _fromUtf8("checkBox_INPUTSEARCHOPTIONS_EXCLUDE_SYS_VAR"))
         self.groupBox_2 = QtGui.QGroupBox(self.DisplayTab)
         self.groupBox_2.setGeometry(QtCore.QRect(270, 10, 281, 121))
         self.groupBox_2.setObjectName(_fromUtf8("groupBox_2"))
@@ -208,109 +216,193 @@ class Ui_Options_Dialog(object):
         self.checkBox_GRIPS.setObjectName(_fromUtf8("checkBox_GRIPS"))
         self.checkBox_GRIPMULTIFUNCTIONAL_ON_DYNAMIC_MENU_AND_HOT_GRIPT = QtGui.QCheckBox(self.groupBox_11)
         self.checkBox_GRIPMULTIFUNCTIONAL_ON_DYNAMIC_MENU_AND_HOT_GRIPT.setGeometry(QtCore.QRect(20, 70, 241, 17))
-        self.checkBox_GRIPMULTIFUNCTIONAL_ON_DYNAMIC_MENU_AND_HOT_GRIPT.setObjectName(_fromUtf8("checkBox_GRIPMULTIFUNCTIONAL_ON_DYNAMIC_MENU_AND_HOT_GRIPT"))
+        self.checkBox_GRIPMULTIFUNCTIONAL_ON_DYNAMIC_MENU_AND_HOT_GRIPT.setObjectName(
+            _fromUtf8("checkBox_GRIPMULTIFUNCTIONAL_ON_DYNAMIC_MENU_AND_HOT_GRIPT"))
         self.lineEdit_GRIPOBJLIMIT = QtGui.QLineEdit(self.groupBox_11)
         self.lineEdit_GRIPOBJLIMIT.setGeometry(QtCore.QRect(20, 100, 31, 20))
         self.lineEdit_GRIPOBJLIMIT.setObjectName(_fromUtf8("lineEdit_GRIPOBJLIMIT"))
         self.label_GRIPOBJLIMIT = QtGui.QLabel(self.groupBox_11)
         self.label_GRIPOBJLIMIT.setGeometry(QtCore.QRect(60, 100, 201, 31))
         self.label_GRIPOBJLIMIT.setToolTip(_fromUtf8(""))
-        self.label_GRIPOBJLIMIT.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.label_GRIPOBJLIMIT.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
         self.label_GRIPOBJLIMIT.setWordWrap(True)
         self.label_GRIPOBJLIMIT.setObjectName(_fromUtf8("label_GRIPOBJLIMIT"))
         self.tabWidget.addTab(self.SelectionTab, _fromUtf8(""))
 
         self.retranslateUi(Options_Dialog)
         self.tabWidget.setCurrentIndex(2)
-        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("accepted()")), Options_Dialog.ButtonBOX_Accepted)
-        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("clicked(QAbstractButton*)")), Options_Dialog.ButtonBOX_Apply)
-        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("helpRequested()")), Options_Dialog.ButtonHELP_Pressed)
-        QtCore.QObject.connect(self.checkBox_INPUTSEARCHOPTIONS_ON, QtCore.SIGNAL(_fromUtf8("clicked()")), Options_Dialog.checkBox_INPUTSEARCHOPTIONS_ON_clicked)
-        QtCore.QObject.connect(self.horizontalSlider_CURSORSIZE, QtCore.SIGNAL(_fromUtf8("sliderMoved(int)")), Options_Dialog.horizontalSlider_CURSORSIZE_moved)
-        QtCore.QObject.connect(self.lineEdit_CURSORSIZE, QtCore.SIGNAL(_fromUtf8("textEdited(QString)")), Options_Dialog.lineEdit_CURSORSIZE_textChanged)
-        QtCore.QObject.connect(self.horizontalSlider_CURSORSIZE, QtCore.SIGNAL(_fromUtf8("valueChanged(int)")), Options_Dialog.horizontalSlider_CURSORSIZE_moved)
-        QtCore.QObject.connect(self.horizontalSlider_AUTOSNAPSIZE, QtCore.SIGNAL(_fromUtf8("valueChanged(int)")), Options_Dialog.horizontalSlider_AUTOSNAPSIZE_changed)
-        QtCore.QObject.connect(self.horizontalSlider_APERTURE, QtCore.SIGNAL(_fromUtf8("valueChanged(int)")), Options_Dialog.horizontalSlider_APERTURE_changed)
-        QtCore.QObject.connect(self.horizontalSlider_PICKBOX, QtCore.SIGNAL(_fromUtf8("valueChanged(int)")), Options_Dialog.horizontalSlider_PICKBOX_changed)
-        QtCore.QObject.connect(self.horizontalSlider_GRIPSIZE, QtCore.SIGNAL(_fromUtf8("valueChanged(int)")), Options_Dialog.horizontalSlider_GRIPSIZE_changed)
-        QtCore.QObject.connect(self.checkBox_GRIPS, QtCore.SIGNAL(_fromUtf8("clicked()")), Options_Dialog.checkBox_GRIPS_ON_clicked)
-        QtCore.QObject.connect(self.button_GripColor, QtCore.SIGNAL(_fromUtf8("clicked()")), Options_Dialog.button_GripColor_clicked)
-        QtCore.QObject.connect(self.Button_TextWindowColor, QtCore.SIGNAL(_fromUtf8("clicked()")), Options_Dialog.Button_TextWindowColor_clicked)
-        QtCore.QObject.connect(self.pushButton_AutoSnapColor, QtCore.SIGNAL(_fromUtf8("clicked()")), Options_Dialog.Button_AutoSnapWindowColor_clicked)
+        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("accepted()")),
+                               Options_Dialog.ButtonBOX_Accepted)
+        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("clicked(QAbstractButton*)")),
+                               Options_Dialog.ButtonBOX_Apply)
+        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("helpRequested()")),
+                               Options_Dialog.ButtonHELP_Pressed)
+        QtCore.QObject.connect(self.checkBox_INPUTSEARCHOPTIONS_ON, QtCore.SIGNAL(_fromUtf8("clicked()")),
+                               Options_Dialog.checkBox_INPUTSEARCHOPTIONS_ON_clicked)
+        QtCore.QObject.connect(self.horizontalSlider_CURSORSIZE, QtCore.SIGNAL(_fromUtf8("sliderMoved(int)")),
+                               Options_Dialog.horizontalSlider_CURSORSIZE_moved)
+        QtCore.QObject.connect(self.lineEdit_CURSORSIZE, QtCore.SIGNAL(_fromUtf8("textEdited(QString)")),
+                               Options_Dialog.lineEdit_CURSORSIZE_textChanged)
+        QtCore.QObject.connect(self.horizontalSlider_CURSORSIZE, QtCore.SIGNAL(_fromUtf8("valueChanged(int)")),
+                               Options_Dialog.horizontalSlider_CURSORSIZE_moved)
+        QtCore.QObject.connect(self.horizontalSlider_AUTOSNAPSIZE, QtCore.SIGNAL(_fromUtf8("valueChanged(int)")),
+                               Options_Dialog.horizontalSlider_AUTOSNAPSIZE_changed)
+        QtCore.QObject.connect(self.horizontalSlider_APERTURE, QtCore.SIGNAL(_fromUtf8("valueChanged(int)")),
+                               Options_Dialog.horizontalSlider_APERTURE_changed)
+        QtCore.QObject.connect(self.horizontalSlider_PICKBOX, QtCore.SIGNAL(_fromUtf8("valueChanged(int)")),
+                               Options_Dialog.horizontalSlider_PICKBOX_changed)
+        QtCore.QObject.connect(self.horizontalSlider_GRIPSIZE, QtCore.SIGNAL(_fromUtf8("valueChanged(int)")),
+                               Options_Dialog.horizontalSlider_GRIPSIZE_changed)
+        QtCore.QObject.connect(self.checkBox_GRIPS, QtCore.SIGNAL(_fromUtf8("clicked()")),
+                               Options_Dialog.checkBox_GRIPS_ON_clicked)
+        QtCore.QObject.connect(self.button_GripColor, QtCore.SIGNAL(_fromUtf8("clicked()")),
+                               Options_Dialog.button_GripColor_clicked)
+        QtCore.QObject.connect(self.Button_TextWindowColor, QtCore.SIGNAL(_fromUtf8("clicked()")),
+                               Options_Dialog.Button_TextWindowColor_clicked)
+        QtCore.QObject.connect(self.pushButton_AutoSnapColor, QtCore.SIGNAL(_fromUtf8("clicked()")),
+                               Options_Dialog.Button_AutoSnapWindowColor_clicked)
         QtCore.QMetaObject.connectSlotsByName(Options_Dialog)
 
     def retranslateUi(self, Options_Dialog):
         Options_Dialog.setWindowTitle(_translate("Options_Dialog", "QAD - Options", None))
         self.groupBox.setTitle(_translate("Options_Dialog", "Window Elements", None))
-        self.Button_TextWindowColor.setToolTip(_translate("Options_Dialog", "Displays the Drawing Window Colors dialog box. ", None))
+        self.Button_TextWindowColor.setToolTip(
+            _translate("Options_Dialog", "Displays the Drawing Window Colors dialog box. ", None))
         self.Button_TextWindowColor.setText(_translate("Options_Dialog", "Colors", None))
-        self.checkBox_INPUTSEARCHOPTIONS_AUTOCOMPLETE.setToolTip(_translate("Options_Dialog", "Automatically appends suggestions as each keystroke is entered after the second keystroke (system variable INPUTSEARCHOPTIONS).", None))
+        self.checkBox_INPUTSEARCHOPTIONS_AUTOCOMPLETE.setToolTip(_translate("Options_Dialog",
+                                                                            "Automatically appends suggestions as each keystroke is entered after the second keystroke (system variable INPUTSEARCHOPTIONS).",
+                                                                            None))
         self.checkBox_INPUTSEARCHOPTIONS_AUTOCOMPLETE.setText(_translate("Options_Dialog", "AutoComplete", None))
-        self.checkBox_SHOWTEXTWINDOW.setToolTip(_translate("Options_Dialog", "Show the text window at startup (system variable SHOWTEXTWINDOW).", None))
+        self.checkBox_SHOWTEXTWINDOW.setToolTip(
+            _translate("Options_Dialog", "Show the text window at startup (system variable SHOWTEXTWINDOW).", None))
         self.checkBox_SHOWTEXTWINDOW.setText(_translate("Options_Dialog", "Show the text window at startup", None))
         self.label_4.setText(_translate("Options_Dialog", "Maximun command history length", None))
-        self.lineEdit_CMDINPUTHISTORYMAX.setToolTip(_translate("Options_Dialog", "Sets the maximum number of previous input values that are stored for a prompt in a command (system variable CMDINPUTHISTORYMAX).", None))
-        self.lineEdit_INPUTSEARCHDELAY.setToolTip(_translate("Options_Dialog", "<html><head/><body><p>Controls the amount of time that elapses before automated keyboard features display at the Command prompt.</p><p>Valid values are real numbers from 100 to 10,000, which represent milliseconds.</p></body></html>", None))
+        self.lineEdit_CMDINPUTHISTORYMAX.setToolTip(_translate("Options_Dialog",
+                                                               "Sets the maximum number of previous input values that are stored for a prompt in a command (system variable CMDINPUTHISTORYMAX).",
+                                                               None))
+        self.lineEdit_INPUTSEARCHDELAY.setToolTip(_translate("Options_Dialog",
+                                                             "<html><head/><body><p>Controls the amount of time that elapses before automated keyboard features display at the Command prompt.</p><p>Valid values are real numbers from 100 to 10,000, which represent milliseconds.</p></body></html>",
+                                                             None))
         self.label_INPUTSEARCHDELAY.setText(_translate("Options_Dialog", "Delay time (msec)", None))
-        self.checkBox_INPUTSEARCHOPTIONS_ON.setToolTip(_translate("Options_Dialog", "Turns on/off all automated keyboard features when typing at the Command prompt (system variable INPUTSEARCHOPTIONS).", None))
+        self.checkBox_INPUTSEARCHOPTIONS_ON.setToolTip(_translate("Options_Dialog",
+                                                                  "Turns on/off all automated keyboard features when typing at the Command prompt (system variable INPUTSEARCHOPTIONS).",
+                                                                  None))
         self.checkBox_INPUTSEARCHOPTIONS_ON.setText(_translate("Options_Dialog", "Automated keyboard features", None))
-        self.checkBox_INPUTSEARCHOPTIONS_DISPLAY_LIST.setToolTip(_translate("Options_Dialog", "Displays a list of suggestions as keystrokes are entered (system variable INPUTSEARCHOPTIONS).", None))
-        self.checkBox_INPUTSEARCHOPTIONS_DISPLAY_LIST.setText(_translate("Options_Dialog", "Displays a list of suggestions", None))
-        self.checkBox_INPUTSEARCHOPTIONS_DISPLAY_ICON.setToolTip(_translate("Options_Dialog", "Displays the icon of the command or system variable, if available (system variable INPUTSEARCHOPTIONS).", None))
-        self.checkBox_INPUTSEARCHOPTIONS_DISPLAY_ICON.setText(_translate("Options_Dialog", "Displays the icon of the command", None))
-        self.checkBox_INPUTSEARCHOPTIONS_EXCLUDE_SYS_VAR.setToolTip(_translate("Options_Dialog", "Excludes the display of system variables (system variable INPUTSEARCHOPTIONS).", None))
-        self.checkBox_INPUTSEARCHOPTIONS_EXCLUDE_SYS_VAR.setText(_translate("Options_Dialog", "Excludes system variables", None))
+        self.checkBox_INPUTSEARCHOPTIONS_DISPLAY_LIST.setToolTip(_translate("Options_Dialog",
+                                                                            "Displays a list of suggestions as keystrokes are entered (system variable INPUTSEARCHOPTIONS).",
+                                                                            None))
+        self.checkBox_INPUTSEARCHOPTIONS_DISPLAY_LIST.setText(
+            _translate("Options_Dialog", "Displays a list of suggestions", None))
+        self.checkBox_INPUTSEARCHOPTIONS_DISPLAY_ICON.setToolTip(_translate("Options_Dialog",
+                                                                            "Displays the icon of the command or system variable, if available (system variable INPUTSEARCHOPTIONS).",
+                                                                            None))
+        self.checkBox_INPUTSEARCHOPTIONS_DISPLAY_ICON.setText(
+            _translate("Options_Dialog", "Displays the icon of the command", None))
+        self.checkBox_INPUTSEARCHOPTIONS_EXCLUDE_SYS_VAR.setToolTip(_translate("Options_Dialog",
+                                                                               "Excludes the display of system variables (system variable INPUTSEARCHOPTIONS).",
+                                                                               None))
+        self.checkBox_INPUTSEARCHOPTIONS_EXCLUDE_SYS_VAR.setText(
+            _translate("Options_Dialog", "Excludes system variables", None))
         self.groupBox_2.setTitle(_translate("Options_Dialog", "Resolution", None))
-        self.lineEdit_ARCMINSEGMENTQTY.setToolTip(_translate("Options_Dialog", "Minimum number of segments to approximate an arc (system variable ARCMINSEGMENTQTY).", None))
+        self.lineEdit_ARCMINSEGMENTQTY.setToolTip(_translate("Options_Dialog",
+                                                             "Minimum number of segments to approximate an arc (system variable ARCMINSEGMENTQTY).",
+                                                             None))
         self.label.setText(_translate("Options_Dialog", "Minimum number of segments in an arc", None))
-        self.label_2.setToolTip(_translate("Options_Dialog", "Minimum number of segments to approximate a circle (system variable CIRCLEMINSEGMENTQTY).", None))
+        self.label_2.setToolTip(_translate("Options_Dialog",
+                                           "Minimum number of segments to approximate a circle (system variable CIRCLEMINSEGMENTQTY).",
+                                           None))
         self.label_2.setText(_translate("Options_Dialog", "Minimum number of segments in a circle", None))
-        self.lineEdit_CIRCLEMINSEGMENTQTY.setToolTip(_translate("Options_Dialog", "Minimum number of segments to approximate a circle (system variable CIRCLEMINSEGMENTQTY).", None))
-        self.lineEdit_TOLERANCE2APPROXCURVE.setToolTip(_translate("Options_Dialog", "Maximum error approximating a curve to segments (system variable TOLERANCE2APPROXCURVE).", None))
-        self.label_3.setText(_translate("Options_Dialog", "Maximun admitted error between a real curve and the aproximated, segmented curve", None))
+        self.lineEdit_CIRCLEMINSEGMENTQTY.setToolTip(_translate("Options_Dialog",
+                                                                "Minimum number of segments to approximate a circle (system variable CIRCLEMINSEGMENTQTY).",
+                                                                None))
+        self.lineEdit_TOLERANCE2APPROXCURVE.setToolTip(_translate("Options_Dialog",
+                                                                  "Maximum error approximating a curve to segments (system variable TOLERANCE2APPROXCURVE).",
+                                                                  None))
+        self.label_3.setText(_translate("Options_Dialog",
+                                        "Maximun admitted error between a real curve and the aproximated, segmented curve",
+                                        None))
         self.groupBox_3.setTitle(_translate("Options_Dialog", "Crosshair size", None))
-        self.lineEdit_CURSORSIZE.setToolTip(_translate("Options_Dialog", "Determines the size of the crosshair as a percentage of the screen size (system variable CURSORSIZE).", None))
-        self.horizontalSlider_CURSORSIZE.setToolTip(_translate("Options_Dialog", "Determines the size of the crosshair as a percentage of the screen size (system variable CURSORSIZE).", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.DisplayTab), _translate("Options_Dialog", "Display", None))
+        self.lineEdit_CURSORSIZE.setToolTip(_translate("Options_Dialog",
+                                                       "Determines the size of the crosshair as a percentage of the screen size (system variable CURSORSIZE).",
+                                                       None))
+        self.horizontalSlider_CURSORSIZE.setToolTip(_translate("Options_Dialog",
+                                                               "Determines the size of the crosshair as a percentage of the screen size (system variable CURSORSIZE).",
+                                                               None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.DisplayTab),
+                                  _translate("Options_Dialog", "Display", None))
         self.groupBox_4.setTitle(_translate("Options_Dialog", "AutoSnap Settings", None))
-        self.checkBox_AUTOSNAP_DISPLAY_MARK.setToolTip(_translate("Options_Dialog", "Controls the display of the AutoSnap marker. The marker is a geometric symbol that is displayed when the crosshairs move over a snap point ( AUTOSNAP system variable).", None))
+        self.checkBox_AUTOSNAP_DISPLAY_MARK.setToolTip(_translate("Options_Dialog",
+                                                                  "Controls the display of the AutoSnap marker. The marker is a geometric symbol that is displayed when the crosshairs move over a snap point ( AUTOSNAP system variable).",
+                                                                  None))
         self.checkBox_AUTOSNAP_DISPLAY_MARK.setText(_translate("Options_Dialog", "Marker", None))
-        self.pushButton_AutoSnapColor.setToolTip(_translate("Options_Dialog", "Displays the Drawing Window Colors dialog box. ", None))
+        self.pushButton_AutoSnapColor.setToolTip(
+            _translate("Options_Dialog", "Displays the Drawing Window Colors dialog box. ", None))
         self.pushButton_AutoSnapColor.setText(_translate("Options_Dialog", "Colors", None))
-        self.checkBox_APBOX.setToolTip(_translate("Options_Dialog", "Turns the display of the AutoSnap aperture box on or off.\n"
-"The aperture box is a box that appears inside the crosshairs when you snap to an object (APBOX system variable).", None))
+        self.checkBox_APBOX.setToolTip(
+            _translate("Options_Dialog", "Turns the display of the AutoSnap aperture box on or off.\n"
+                                         "The aperture box is a box that appears inside the crosshairs when you snap to an object (APBOX system variable).",
+                       None))
         self.checkBox_APBOX.setText(_translate("Options_Dialog", "Display AutoSnap aperture box", None))
-        self.checkBox_AUTOSNAP_DISPLAY_TOOLTIPS.setToolTip(_translate("Options_Dialog", "Controls the display of the AutoSnap tooltip. The tooltip is a label that describes which part of the object you are snapping to (AUTOSNAP system variable).", None))
+        self.checkBox_AUTOSNAP_DISPLAY_TOOLTIPS.setToolTip(_translate("Options_Dialog",
+                                                                      "Controls the display of the AutoSnap tooltip. The tooltip is a label that describes which part of the object you are snapping to (AUTOSNAP system variable).",
+                                                                      None))
         self.checkBox_AUTOSNAP_DISPLAY_TOOLTIPS.setText(_translate("Options_Dialog", "Display AutoSnap tooltip", None))
-        self.checkBox_AUTOSNAP_MAGNET.setToolTip(_translate("Options_Dialog", "Turns the AutoSnap magnet on or off. The magnet is an automatic movement of the crosshairs that locks the crosshairs onto the nearest snap point (AUTOSNAP system variable).", None))
+        self.checkBox_AUTOSNAP_MAGNET.setToolTip(_translate("Options_Dialog",
+                                                            "Turns the AutoSnap magnet on or off. The magnet is an automatic movement of the crosshairs that locks the crosshairs onto the nearest snap point (AUTOSNAP system variable).",
+                                                            None))
         self.checkBox_AUTOSNAP_MAGNET.setText(_translate("Options_Dialog", "Magnet", None))
         self.groupBox_5.setTitle(_translate("Options_Dialog", "Alignment Point Acquisition", None))
-        self.radioButton_POLARMODE_AUTO_ACQUIRE.setToolTip(_translate("Options_Dialog", "Displays tracking vectors automatically when the aperture moves over an object snap.", None))
+        self.radioButton_POLARMODE_AUTO_ACQUIRE.setToolTip(_translate("Options_Dialog",
+                                                                      "Displays tracking vectors automatically when the aperture moves over an object snap.",
+                                                                      None))
         self.radioButton_POLARMODE_AUTO_ACQUIRE.setText(_translate("Options_Dialog", "Automatic", None))
-        self.radioButton_POLARMODE_SHIFT_TO_ACQUIRE.setToolTip(_translate("Options_Dialog", "Displays tracking vectors when you press Shift and move the aperture over an object snap.", None))
+        self.radioButton_POLARMODE_SHIFT_TO_ACQUIRE.setToolTip(_translate("Options_Dialog",
+                                                                          "Displays tracking vectors when you press Shift and move the aperture over an object snap.",
+                                                                          None))
         self.radioButton_POLARMODE_SHIFT_TO_ACQUIRE.setText(_translate("Options_Dialog", "Shift to acquire", None))
         self.groupBox_6.setTitle(_translate("Options_Dialog", "AutoSnap Marker Size", None))
-        self.horizontalSlider_AUTOSNAPSIZE.setToolTip(_translate("Options_Dialog", "Sets the display size for the AutoSnap marker.", None))
+        self.horizontalSlider_AUTOSNAPSIZE.setToolTip(
+            _translate("Options_Dialog", "Sets the display size for the AutoSnap marker.", None))
         self.groupBox_7.setTitle(_translate("Options_Dialog", "Aperture Size", None))
-        self.horizontalSlider_APERTURE.setToolTip(_translate("Options_Dialog", "Sets the display size for the object snap target box, in pixels (APERTURE system variable).", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.DraftingTab), _translate("Options_Dialog", "Drafting", None))
+        self.horizontalSlider_APERTURE.setToolTip(_translate("Options_Dialog",
+                                                             "Sets the display size for the object snap target box, in pixels (APERTURE system variable).",
+                                                             None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.DraftingTab),
+                                  _translate("Options_Dialog", "Drafting", None))
         self.groupBox_8.setTitle(_translate("Options_Dialog", "Pickbox size", None))
-        self.horizontalSlider_PICKBOX.setToolTip(_translate("Options_Dialog", "Sets the object selection target height, in pixels (PICKBOX system variable).", None))
+        self.horizontalSlider_PICKBOX.setToolTip(_translate("Options_Dialog",
+                                                            "Sets the object selection target height, in pixels (PICKBOX system variable).",
+                                                            None))
         self.groupBox_9.setTitle(_translate("Options_Dialog", "Grip size", None))
-        self.horizontalSlider_GRIPSIZE.setToolTip(_translate("Options_Dialog", "Sets the size of the grip box in pixels ( GRIPSIZE system variable).", None))
+        self.horizontalSlider_GRIPSIZE.setToolTip(
+            _translate("Options_Dialog", "Sets the size of the grip box in pixels ( GRIPSIZE system variable).", None))
         self.groupBox_10.setTitle(_translate("Options_Dialog", "Selection modes", None))
-        self.checkBox_PICKFIRST.setToolTip(_translate("Options_Dialog", "Controls whether you select objects before (noun-verb selection) or after you issue a command (PICKFIRST system variable).", None))
+        self.checkBox_PICKFIRST.setToolTip(_translate("Options_Dialog",
+                                                      "Controls whether you select objects before (noun-verb selection) or after you issue a command (PICKFIRST system variable).",
+                                                      None))
         self.checkBox_PICKFIRST.setText(_translate("Options_Dialog", "Noun/verb selection", None))
-        self.checkBox_PICKADD.setToolTip(_translate("Options_Dialog", "Controls whether subsequent selections replace the current selection set or add to it (PICKADD system variable).", None))
+        self.checkBox_PICKADD.setToolTip(_translate("Options_Dialog",
+                                                    "Controls whether subsequent selections replace the current selection set or add to it (PICKADD system variable).",
+                                                    None))
         self.checkBox_PICKADD.setText(_translate("Options_Dialog", "Use Shift to add to selection", None))
         self.groupBox_11.setTitle(_translate("Options_Dialog", "Grips", None))
-        self.button_GripColor.setToolTip(_translate("Options_Dialog", "Displays the Grip Colors dialog box where you can specify the colors for different grip status and elements.", None))
+        self.button_GripColor.setToolTip(_translate("Options_Dialog",
+                                                    "Displays the Grip Colors dialog box where you can specify the colors for different grip status and elements.",
+                                                    None))
         self.button_GripColor.setText(_translate("Options_Dialog", "Grip Colors...", None))
-        self.checkBox_GRIPS.setToolTip(_translate("Options_Dialog", "Controls the display of grips on selected objects. Displaying grips in a drawing significantly affects performance. Clear this option to optimize performance ( GRIPS system variable).", None))
+        self.checkBox_GRIPS.setToolTip(_translate("Options_Dialog",
+                                                  "Controls the display of grips on selected objects. Displaying grips in a drawing significantly affects performance. Clear this option to optimize performance ( GRIPS system variable).",
+                                                  None))
         self.checkBox_GRIPS.setText(_translate("Options_Dialog", "Shows grips", None))
-        self.checkBox_GRIPMULTIFUNCTIONAL_ON_DYNAMIC_MENU_AND_HOT_GRIPT.setToolTip(_translate("Options_Dialog", "Controls the display of dynamic menu when pausing over a multi-functional grip (GRIPMULTIFUNCTIONAL system variable).", None))
-        self.checkBox_GRIPMULTIFUNCTIONAL_ON_DYNAMIC_MENU_AND_HOT_GRIPT.setText(_translate("Options_Dialog", "Shows dynamic grip menu", None))
-        self.lineEdit_GRIPOBJLIMIT.setToolTip(_translate("Options_Dialog", "Suppresses the display of grips when the selection set includes more than the specified number of objects (GRIPOBJLIMIT system variable).", None))
-        self.label_GRIPOBJLIMIT.setText(_translate("Options_Dialog", "Object selection limit for display of grips", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.SelectionTab), _translate("Options_Dialog", "Selection", None))
-
+        self.checkBox_GRIPMULTIFUNCTIONAL_ON_DYNAMIC_MENU_AND_HOT_GRIPT.setToolTip(_translate("Options_Dialog",
+                                                                                              "Controls the display of dynamic menu when pausing over a multi-functional grip (GRIPMULTIFUNCTIONAL system variable).",
+                                                                                              None))
+        self.checkBox_GRIPMULTIFUNCTIONAL_ON_DYNAMIC_MENU_AND_HOT_GRIPT.setText(
+            _translate("Options_Dialog", "Shows dynamic grip menu", None))
+        self.lineEdit_GRIPOBJLIMIT.setToolTip(_translate("Options_Dialog",
+                                                         "Suppresses the display of grips when the selection set includes more than the specified number of objects (GRIPOBJLIMIT system variable).",
+                                                         None))
+        self.label_GRIPOBJLIMIT.setText(
+            _translate("Options_Dialog", "Object selection limit for display of grips", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.SelectionTab),
+                                  _translate("Options_Dialog", "Selection", None))

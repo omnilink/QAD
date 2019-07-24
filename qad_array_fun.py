@@ -24,22 +24,22 @@
 
 
 # Import the PyQt and QGIS libraries
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from qgis.PyQt.QtCore import *
+from qgis.PyQt.QtGui import *
 from qgis.core import *
 from qgis.gui import *
 import qgis.utils
 
 
-import qad_utils
-import qad_arc
-import qad_circle
-from qad_snapper import *
-import qad_layer
-from qad_highlight import QadHighlight
-from qad_entity import *
-from qad_dim import *
-import qad_label
+import qad.qad_utils
+import qad.qad_arc
+import qad.qad_circle
+from qad.qad_snapper import *
+import qad.qad_layer
+from qad.qad_highlight import QadHighlight
+from qad.qad_entity import *
+from qad.qad_dim import *
+import qad.qad_label
 
 
 #===============================================================================

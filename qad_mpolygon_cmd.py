@@ -22,9 +22,9 @@
  ***************************************************************************/
 """
 
-from qad_generic_cmd import QadCommandClass
-from qad_getpoint import *
-from qad_pline_cmd import QadPLINECommandClass
+from qad.qad_generic_cmd import QadCommandClass
+from qad.qad_getpoint import *
+from qad.qad_pline_cmd import QadPLINECommandClass
 from qgis.PyQt.QtCore import QObject, pyqtSignal
 from qgis.PyQt.QtGui import QIcon
 

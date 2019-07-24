@@ -22,40 +22,43 @@
  ***************************************************************************/
 """
 
-DEBUG = False # False # True
+DEBUG = False  # False # True
 
 if DEBUG == True:
-   import os.path
+    import os.path
 
-   import sys
-   
-   path = "C:/software/python/eclipse-SDK-4.2.2-win32/eclipse/plugins/org.python.pydev_2.7.3.2013031601/pysrc/"
-   if os.path.exists(path):
-      import sys
-      sys.path.append(path)
-      from pydevd import *
+    import sys
 
+    path = "C:/software/python/eclipse-SDK-4.2.2-win32/eclipse/plugins/org.python.pydev_2.7.3.2013031601/pysrc/"
+    if os.path.exists(path):
+        import sys
+
+        sys.path.append(path)
+        from pydevd import *
 
 # Import the PyQt library
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from qgis.PyQt.QtCore import *
+from qgis.PyQt.QtGui import *
 
 
 def isDebug():
-   return DEBUG
+    return DEBUG
+
 
 def displayMsg(msg):
-   if isDebug():
-      QMessageBox.information(None, "QAD Debug Window", msg)
+    if isDebug():
+        QMessageBox.information(None, "QAD Debug Window", msg)
+
 
 def displayList(values):
-   if isDebug():
-      msg = ""
-      for value in Values:
-         msg = msg + str(value) + "\n"
-      displayMsg(msg)
-      
+    if isDebug():
+        msg = ""
+        for value in Values:
+            msg = msg + str(value) + "\n"
+        displayMsg(msg)
+
+
 def breakPoint():
-   if isDebug():
-      # Premi F5 per continuare il debug...
-      settrace()
+    if isDebug():
+        # Premi F5 per continuare il debug...
+        settrace()

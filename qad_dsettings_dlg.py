@@ -25,11 +25,12 @@
 # Import the PyQt and QGIS libraries
 from qgis.PyQt.QtCore import *
 from qgis.PyQt.QtGui import *
+from qgis.PyQt.QtWidgets import QDialog
 from qgis.core import *
 from qgis.core import QgsApplication
 from qgis.utils import *
 
-import qad.qad_dsettings_ui
+from qad.qad_dsettings_ui import Ui_DSettings_Dialog
 
 from qad.qad_variables import *
 from qad.qad_snapper import *
@@ -47,7 +48,7 @@ class QadDSETTINGSTabIndexEnum():
 
 #######################################################################################
 # Classe che gestisce l'interfaccia grafica del comando DSETTINGS
-class QadDSETTINGSDialog(QDialog, QObject, qad_dsettings_ui.Ui_DSettings_Dialog):
+class QadDSETTINGSDialog(QDialog, QObject, Ui_DSettings_Dialog):
     def __init__(self, plugIn, dsettingsTabIndex=None):
         self.plugIn = plugIn
         self.iface = self.plugIn.iface.mainWindow()

@@ -31,18 +31,18 @@ import qad.qad_utils
 from qad.qad_variables import *
 from qad.qad_rubberband import *
 from qad.qad_getpoint import *
-from qad_generic_cmd import QadCommandClass
-from qad_entity import *
-from qad_ssget_cmd import QadSSGetClass
-from qad_grip import *
-from qad_stretch_cmd import QadGRIPSTRETCHCommandClass
-from qad_move_cmd import QadGRIPMOVECommandClass
-from qad_rotate_cmd import QadGRIPROTATECommandClass
-from qad_scale_cmd import QadGRIPSCALECommandClass
-from qad_mirror_cmd import QadGRIPMIRRORCommandClass
-from qad_arc_cmd import QadGRIPCHANGEARCRADIUSCommandClass
-from qad_lengthen_cmd import QadGRIPLENGTHENCommandClass
-from qad_pedit_cmd import QadGRIPINSERTREMOVEVERTEXCommandClass, QadGRIPARCLINECONVERTCommandClass
+from qad.qad_generic_cmd import QadCommandClass
+from qad.qad_entity import *
+from qad.qad_ssget_cmd import QadSSGetClass
+from qad.qad_grip import *
+from qad.qad_stretch_cmd import QadGRIPSTRETCHCommandClass
+from qad.qad_move_cmd import QadGRIPMOVECommandClass
+from qad.qad_rotate_cmd import QadGRIPROTATECommandClass
+from qad.qad_scale_cmd import QadGRIPSCALECommandClass
+from qad.qad_mirror_cmd import QadGRIPMIRRORCommandClass
+from qad.qad_arc_cmd import QadGRIPCHANGEARCRADIUSCommandClass
+from qad.qad_lengthen_cmd import QadGRIPLENGTHENCommandClass
+from qad.qad_pedit_cmd import QadGRIPINSERTREMOVEVERTEXCommandClass, QadGRIPARCLINECONVERTCommandClass
 
 from qad.qad_msg import QadMsg
 
