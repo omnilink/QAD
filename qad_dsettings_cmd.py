@@ -48,7 +48,7 @@ class QadDSETTINGSCommandClass(QadCommandClass):
         return "DSETTINGS"
 
     def connectQAction(self, action):
-        QObject.connect(action, SIGNAL("triggered()"), self.plugIn.runDSETTINGSCommand)
+        action.triggered = self.plugIn.runDSETTINGSCommand
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/dsettings.png")

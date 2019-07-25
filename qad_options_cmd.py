@@ -48,7 +48,7 @@ class QadOPTIONSCommandClass(QadCommandClass):
         return "OPTIONS"
 
     def connectQAction(self, action):
-        QObject.connect(action, SIGNAL("triggered()"), self.plugIn.runOPTIONSCommand)
+        action.triggered = self.plugIn.runOPTIONSCommand
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/options.png")

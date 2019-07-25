@@ -53,7 +53,7 @@ class QadMBUFFERCommandClass(QadCommandClass):
         return "MBUFFER"
 
     def connectQAction(self, action):
-        QObject.connect(action, SIGNAL("triggered()"), self.plugIn.runMBUFFERCommand)
+        action.triggered = self.plugIn.runMBUFFERCommand
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/mbuffer.png")

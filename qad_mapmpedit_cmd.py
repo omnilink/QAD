@@ -63,7 +63,7 @@ class QadMAPMPEDITCommandClass(QadCommandClass):
         return "MAPMPEDIT"
 
     def connectQAction(self, action):
-        QObject.connect(action, SIGNAL("triggered()"), self.plugIn.runMAPMPEDITCommand)
+        action.triggered = self.plugIn.runMAPMPEDITCommand
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/mapmpedit.png")

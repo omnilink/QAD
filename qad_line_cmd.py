@@ -52,7 +52,7 @@ class QadLINECommandClass(QadCommandClass):
         return "LINE"
 
     def connectQAction(self, action):
-        QObject.connect(action, SIGNAL("triggered()"), self.plugIn.runLINECommand)
+        action.triggered = self.plugIn.runLINECommand
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/line.png")

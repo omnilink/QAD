@@ -54,7 +54,7 @@ class QadCOPYCommandClass(QadCommandClass):
         return "COPY"
 
     def connectQAction(self, action):
-        QObject.connect(action, SIGNAL("triggered()"), self.plugIn.runCOPYCommand)
+        action.triggered = self.plugIn.runCOPYCommand
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/copyEnt.png")

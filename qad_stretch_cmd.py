@@ -54,7 +54,7 @@ class QadSTRETCHCommandClass(QadCommandClass):
         return "STRETCH"
 
     def connectQAction(self, action):
-        QObject.connect(action, SIGNAL("triggered()"), self.plugIn.runSTRETCHCommand)
+        action.triggered = self.plugIn.runSTRETCHCommand
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/stretch.png")

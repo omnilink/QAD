@@ -45,7 +45,7 @@ class QadHELPCommandClass(QadCommandClass):
         return "HELP"
 
     def connectQAction(self, action):
-        QObject.connect(action, SIGNAL("triggered()"), self.plugIn.runHELPCommand)
+        action.triggered = self.plugIn.runHELPCommand
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/help.png")

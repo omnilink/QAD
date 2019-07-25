@@ -58,7 +58,7 @@ class QadPEDITCommandClass(QadCommandClass):
         return "PEDIT"
 
     def connectQAction(self, action):
-        QObject.connect(action, SIGNAL("triggered()"), self.plugIn.runPEDITCommand)
+        action.triggered = self.plugIn.runPEDITCommand
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/pedit.png")

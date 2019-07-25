@@ -53,7 +53,7 @@ class QadEXTENDCommandClass(QadCommandClass):
         return "EXTEND"
 
     def connectQAction(self, action):
-        QObject.connect(action, SIGNAL("triggered()"), self.plugIn.runEXTENDCommand)
+        action.triggered = self.plugIn.runEXTENDCommand
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/extend.png")

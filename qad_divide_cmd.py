@@ -65,7 +65,7 @@ class QadDIVIDECommandClass(QadCommandClass):
       return "DIVIDE"
 
    def connectQAction(self, action):
-      QObject.connect(action, SIGNAL("triggered()"), self.plugIn.runDIVIDECommand)
+      action.triggered = self.plugIn.runDIVIDECommand
 
    def getIcon(self):
       return QIcon(":/plugins/qad/icons/divide.png")

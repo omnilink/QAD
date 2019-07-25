@@ -52,7 +52,7 @@ class QadTEXTCommandClass(QadCommandClass):
         return "TEXT"
 
     def connectQAction(self, action):
-        QObject.connect(action, SIGNAL("triggered()"), self.plugIn.runTEXTCommand)
+        action.triggered = self.plugIn.runTEXTCommand
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/text.png")

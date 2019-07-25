@@ -53,7 +53,7 @@ class QadFILLETCommandClass(QadCommandClass):
         return "FILLET"
 
     def connectQAction(self, action):
-        QObject.connect(action, SIGNAL("triggered()"), self.plugIn.runFILLETCommand)
+        action.triggered = self.plugIn.runFILLETCommand
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/fillet.png")

@@ -151,7 +151,7 @@ class QadCommandClass(QObject):  # derivato da QObject per gestire il metodo sen
 
     def getToolTipText(self):
         text = self.getName()
-        if self.getNote() > 0:
+        if len(self.getNote()) > 0:
             text = text + "\n\n" + self.getNote()
         return text
 
@@ -367,7 +367,7 @@ class QadContextualMenuClass(QMenu):
         for connection in self.connections:
             action = connection[0]
             slot = connection[1]
-            QObject.connect(action, SIGNAL("triggered()"), slot)
+            action.triggered = slot
 
     def enterActionByContextualMenu(self):
         self.plugIn.showEvaluateMsg(None)
@@ -559,7 +559,7 @@ class QadOsnapContextualMenuClass(QMenu):
         for connection in self.connections:
             action = connection[0]
             slot = connection[1]
-            QObject.connect(action, SIGNAL("triggered()"), slot)
+            action.triggered = slot
 
     # ============================================================================
     # addSnapTypeByPopupMenu

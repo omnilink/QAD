@@ -51,7 +51,7 @@ class QadINSERTCommandClass(QadCommandClass):
         return "INSERT"
 
     def connectQAction(self, action):
-        QObject.connect(action, SIGNAL("triggered()"), self.plugIn.runINSERTCommand)
+        action.triggered = self.plugIn.runINSERTCommand
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/insert.png")
