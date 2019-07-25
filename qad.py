@@ -544,8 +544,8 @@ class Qad(QObject):
         # per i layer futuri
         QgsProject.instance().layerWasAdded.connect(self.layerAdded)
         QgsProject.instance().layerWillBeRemoved.connect(self.removeLayer)
-        QObject.connect(self.iface, pyqtSignal("projectRead()"), self.onProjectLoaded)
-        QObject.connect(self.iface, pyqtSignal("newProjectCreated()"), self.onProjectLoaded)
+        self.iface.projectRead.connect(self.onProjectLoaded)
+        self.iface.newProjectCreated.connect(self.onProjectLoaded)
 
         self.showTextWindow(QadVariables.get(QadMsg.translate("Environment variables", "SHOWTEXTWINDOW"), True))
         self.setStandardMapTool()
