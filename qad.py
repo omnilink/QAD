@@ -538,12 +538,12 @@ class Qad(QObject):
         # all'evento <layerModified> per sapere se la modifica fatta su quel layer
         # é stata fatta da QAD o dall'esterno
         # per i layer esistenti
-        for layer in QgsMapLayerRegistry.instance().mapLayers().values():
+        for layer in QgsProject.instance().mapLayers().values():
             self.layerAdded(layer)
             self.removeLayer(layer.id())
         # per i layer futuri
-        QObject.connect(QgsMapLayerRegistry.instance(), SIGNAL("layerWasAdded(QgsMapLayer *)"), self.layerAdded)
-        QObject.connect(QgsMapLayerRegistry.instance(), SIGNAL("layerWillBeRemoved(QString)"), self.removeLayer)
+        QgsProject.instance().layerWasAdded.connect(self.layerAdded)
+        QgsProject.instance().layerWillBeRemoved.connect(self.removeLayer)
         QObject.connect(self.iface, pyqtSignal("projectRead()"), self.onProjectLoaded)
         QObject.connect(self.iface, pyqtSignal("newProjectCreated()"), self.onProjectLoaded)
 
