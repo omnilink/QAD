@@ -24,7 +24,7 @@
 
 from qgis.PyQt.QtCore import *
 from qgis.PyQt.QtGui import *
-from qgis.PyQt.QtWidgets import QDockWidget, QTextEdit, QWidget, QListView, QMenu
+from qgis.PyQt.QtWidgets import QDockWidget, QTextEdit, QWidget, QListView, QMenu, QAbstractItemView
 from qgis.core import *
 from qgis.gui import *
 import sys
@@ -94,7 +94,9 @@ class QadTextWindow(QDockWidget, Ui_QadTextWindow, object):
         self.setAllowedAreas(Qt.TopDockWidgetArea | Qt.BottomDockWidgetArea)
         self.plugin = plugin
         self.cmdSuggestWindow = None
-        self.connect(self, SIGNAL("topLevelChanged(bool)"), self.topLevelChanged)
+        # TODO: This one does not make sense, the handler and the probable signal is named the same - will need to test
+        # the code - for now commented it out, so that the plugin can be loaded.
+        # self.connect(self, SIGNAL("topLevelChanged(bool)"), self.topLevelChanged)
 
         title = self.windowTitle()
         self.setWindowTitle(title + " - " + plugin.version())
@@ -388,7 +390,7 @@ class QadEdit(QTextEdit):
         self.set_keyWordColors()
 
         self.setMouseTracking(True)
-        QObject.connect(self, SIGNAL("textChanged()"), self.onTextChanged)
+        self.textChanged = self.onTextChanged
 
         self.timerForCmdSuggestWindow = QTimer()
         self.timerForCmdSuggestWindow.setSingleShot(True)

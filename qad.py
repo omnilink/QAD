@@ -433,7 +433,7 @@ class Qad(QObject):
         self.initActions()
 
         # Connect to signals
-        QObject.connect(self.canvas, pyqtSignal("mapToolSet(QgsMapTool*)"), self.deactivate)
+        self.canvas.mapToolSet = self.deactivate
 
         # Add menu
         self.menu = QMenu(QadMsg.translate("QAD", "QAD"))
