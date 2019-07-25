@@ -556,6 +556,7 @@ class Qad(QObject):
         self.canvas.mapToolSet.disconnect(self.deactivate)
         QgsProject.instance().layerWasAdded.disconnect(self.layerAdded)
         QgsProject.instance().layerWillBeRemoved.disconnect(self.removeLayer)
+        self.iface.projectRead.disconnect(self.onProjectLoaded)
         self.iface.newProjectCreated.disconnect(self.onProjectLoaded)
 
         # Remove the plugin menu item and icon
@@ -595,7 +596,7 @@ class Qad(QObject):
         self.mainAction = QAction(QIcon(":/plugins/qad/icons/qad.png"), \
                                   QadMsg.translate("QAD", "QAD"), self.iface.mainWindow())
         self.mainAction.setCheckable(True)
-        self.mainAction.connect(self.run)
+        self.mainAction.triggered.connect(self.run)
 
         # SETCURRLAYERBYGRAPH
         cmd = self.QadCommands.getCommandObj(QadMsg.translate("Command_list", "SETCURRLAYERBYGRAPH"))
