@@ -114,7 +114,7 @@ class QadARRAYCommandClass(QadCommandClass):
         return "ARRAY"
 
     def connectQAction(self, action):
-        action.triggered = self.plugIn.runARRAYCommand
+        action.triggered.connect(self.plugIn.runARRAYCommand)
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/arrayRect.png")
@@ -1936,7 +1936,7 @@ class QadARRAYRECTCommandClass(QadCommandClass):
         return "ARRAYRECT"
 
     def connectQAction(self, action):
-        action.triggered = self.plugIn.runARRAYRECTCommand
+        action.triggered.connect(self.plugIn.runARRAYRECTCommand)
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/arrayRect.png")
@@ -2015,7 +2015,7 @@ class QadARRAYPATHCommandClass(QadCommandClass):
         return "ARRAYPATH"
 
     def connectQAction(self, action):
-        action.triggered = self.plugIn.runARRAYPATHCommand
+        action.triggered.connect(self.plugIn.runARRAYPATHCommand)
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/arrayPath.png")
@@ -2095,7 +2095,7 @@ class QadARRAYPOLARCommandClass(QadCommandClass):
         return "ARRAYPOLAR"
 
     def connectQAction(self, action):
-        action.triggered = self.plugIn.runARRAYPOLARCommand
+        action.triggered.connect(self.plugIn.runARRAYPOLARCommand)
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/arrayPolar.png")

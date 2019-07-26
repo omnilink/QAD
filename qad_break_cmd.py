@@ -50,7 +50,7 @@ class QadBREAKCommandClass(QadCommandClass):
         return "BREAK"
 
     def connectQAction(self, action):
-        action.triggered = self.plugIn.runBREAKCommand
+        action.triggered.connect(self.plugIn.runBREAKCommand)
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/break.png")

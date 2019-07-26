@@ -490,7 +490,7 @@ class QadMacroRunnerCommandClass(QadCommandClass):
         return "MACRO_RUNNER"
 
     def connectQAction(self, action):
-        action.triggered = self.plugIn.runREDOCommand
+        action.triggered.connect(self.plugIn.runREDOCommand)
 
     def __init__(self, plugIn):
         QadCommandClass.__init__(self, plugIn)
