@@ -374,4 +374,4 @@ class Ui_DSettings_Dialog(object):
         self.okButton.setText(_translate("DSettings_Dialog", "OK"))
         self.cancelButton.setText(_translate("DSettings_Dialog", "Cancel"))
         self.pushButton_HELP.setText(_translate("DSettings_Dialog", "?"))
-import qad_dsettings_rc
+import qad.qad_dsettings_rc

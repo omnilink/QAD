@@ -260,21 +260,21 @@ class QadDIMSTYLEDialog(QDialog, QObject, Ui_DimStyle_Dialog):
         popupMenu = QMenu(self)
         action = QAction(QadMsg.translate("DimStyle_Dialog", "Set current"), popupMenu)
         popupMenu.addAction(action)
-        action.triggered = self.setCurrentStyle
+        action.triggered.connect(self.setCurrentStyle)
 
         action = QAction(QadMsg.translate("DimStyle_Dialog", "Rename"), popupMenu)
         popupMenu.addAction(action)
-        action.triggered = self.startEditingItem
+        action.triggered.connect(self.startEditingItem)
 
         action = QAction(QadMsg.translate("DimStyle_Dialog", "Modify description"), popupMenu)
         popupMenu.addAction(action)
-        action.triggered = self.updDescrSelectedDimStyle
+        action.triggered.connect(self.updDescrSelectedDimStyle)
 
         action = QAction(QadMsg.translate("DimStyle_Dialog", "Remove"), popupMenu)
         currDimStyleName = QadVariables.get(QadMsg.translate("Environment variables", "DIMSTYLE"))
         if self.selectedDimStyle.name == currDimStyleName:
             action.setDisabled(True)
         popupMenu.addAction(action)
-        action.triggered = self.delSelectedDimStyle
+        action.triggered.connect(self.delSelectedDimStyle)
 
         popupMenu.popup(self.dimStyleList.mapToGlobal(pos))

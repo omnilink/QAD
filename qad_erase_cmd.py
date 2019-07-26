@@ -48,7 +48,7 @@ class QadERASECommandClass(QadCommandClass):
         return "ERASE"
 
     def connectQAction(self, action):
-        action.triggered = self.plugIn.runERASECommand
+        action.triggered.connect(self.plugIn.runERASECommand)
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/erase.png")
