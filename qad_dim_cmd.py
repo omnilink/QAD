@@ -79,7 +79,7 @@ class QadDIMLINEARCommandClass(QadCommandClass):
         return "DIMLINEAR"
 
     def connectQAction(self, action):
-        action.triggered = self.plugIn.runDIMLINEARCommand
+        action.triggered.connect(self.plugIn.runDIMLINEARCommand)
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/dimLinear.png")
@@ -460,7 +460,7 @@ class QadDIMALIGNEDCommandClass(QadCommandClass):
         return "DIMALIGNED"
 
     def connectQAction(self, action):
-        action.triggered = self.plugIn.runDIMALIGNEDCommand
+        action.triggered.connect(self.plugIn.runDIMALIGNEDCommand)
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/dimAligned.png")
@@ -814,7 +814,7 @@ class QadDIMARCCommandClass(QadCommandClass):
         return "DIMARC"
 
     def connectQAction(self, action):
-        action.triggered = self.plugIn.runDIMARCCommand
+        action.triggered.connect(self.plugIn.runDIMARCCommand)
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/dimArc.png")

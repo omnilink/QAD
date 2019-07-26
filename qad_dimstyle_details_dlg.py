@@ -90,7 +90,7 @@ class QadDIMSTYLE_DETAILS_Dialog(QDialog, QObject, Ui_DimStyle_Details_Dialog):
         self.dimLineColor = QgsColorButtonV2(self.dimLineColorDummy.parent())
         self.dimLineColor.setGeometry(self.dimLineColorDummy.geometry())
         self.dimLineColor.setObjectName("dimLineColor")
-        QObject.connect(self.dimLineColor, SIGNAL("colorChanged(QColor)"), self.dimLineColorChanged)
+        self.dimLineColor.colorChanged.connect(self.dimLineColorChanged)
 
         # aggiungo il bottone di qgis QgsColorButtonV2 chiamato extLineColor
         # che eredita la posizione di extLineColorDummy (che viene nascosto)
@@ -98,7 +98,7 @@ class QadDIMSTYLE_DETAILS_Dialog(QDialog, QObject, Ui_DimStyle_Details_Dialog):
         self.extLineColor = QgsColorButtonV2(self.extLineColorDummy.parent())
         self.extLineColor.setGeometry(self.extLineColorDummy.geometry())
         self.extLineColor.setObjectName("extLineColor")
-        QObject.connect(self.extLineColor, SIGNAL("colorChanged(QColor)"), self.extLineColorChanged)
+        self.extLineColor.colorChanged.connect(self.extLineColorChanged)
 
         # aggiungo il bottone di qgis QgsColorButtonV2 chiamato textColor
         # che eredita la posizione di textColorDummy (che viene nascosto)
@@ -106,7 +106,7 @@ class QadDIMSTYLE_DETAILS_Dialog(QDialog, QObject, Ui_DimStyle_Details_Dialog):
         self.textColor = QgsColorButtonV2(self.textColorDummy.parent())
         self.textColor.setGeometry(self.textColorDummy.geometry())
         self.textColor.setObjectName("textColor")
-        QObject.connect(self.textColor, SIGNAL("colorChanged(QColor)"), self.textColorChanged)
+        self.textColor.colorChanged.connect(self.textColorChanged)
 
         # aggiungo il canvans di preview della quota chiamato QadPreviewDim
         # che eredita la posizione di previewDummy (che viene nascosto)

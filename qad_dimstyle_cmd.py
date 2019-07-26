@@ -48,7 +48,7 @@ class QadDIMSTYLECommandClass(QadCommandClass):
         return "DIMSTYLE"
 
     def connectQAction(self, action):
-        action.triggered = self.plugIn.runDIMSTYLECommand
+        action.triggered.connect(self.plugIn.runDIMSTYLECommand)
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/dimStyle.png")
