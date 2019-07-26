@@ -78,6 +78,7 @@ from qad.qad_array_cmd import QadARRAYCommandClass, QadARRAYRECTCommandClass, Qa
     QadARRAYPOLARCommandClass
 from qad.qad_divide_cmd import QadDIVIDECommandClass
 from qad.qad_measure_cmd import QadMEASURECommandClass
+from qad.qad_utils import deselectAll
 
 
 # Classe che gestisce i comandi di Qad
@@ -380,7 +381,7 @@ class QadCommandsClass():
             # eccezione per comando virtuale "QadVirtualSelCommandClass" che in realtà non è un comando
             # ma è usato per selezionare oggetti quando nessun comando è attivo
             if self.actualCommand.getName() != "QadVirtualSelCommandClass":
-                qad_utils.deselectAll(self.plugIn.canvas.layers())
+                deselectAll(self.plugIn.canvas.layers())
 
         del self.actualCommand
         self.actualCommand = None
