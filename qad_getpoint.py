@@ -935,7 +935,7 @@ class QadGetPoint(QgsMapTool):
             addEndLineSnapTypeAction = QAction(msg, popupMenu)
         else:
             addEndLineSnapTypeAction = QAction(icon, msg, popupMenu)
-        QObject.connect(addEndLineSnapTypeAction, SIGNAL("triggered()"), self.addEndLineSnapTypeByPopupMenu)
+        addEndLineSnapTypeAction.triggered.connect(self.addEndLineSnapTypeByPopupMenu)
         popupMenu.addAction(addEndLineSnapTypeAction)
 
         msg = QadMsg.translate("DSettings_Dialog", "Segment Start / End")
@@ -944,7 +944,7 @@ class QadGetPoint(QgsMapTool):
             addEndSnapTypeAction = QAction(msg, popupMenu)
         else:
             addEndSnapTypeAction = QAction(icon, msg, popupMenu)
-        QObject.connect(addEndSnapTypeAction, SIGNAL("triggered()"), self.addEndSnapTypeByPopupMenu)
+        addEndLineSnapTypeAction.triggered.connect(self.addEndSnapTypeByPopupMenu)
         popupMenu.addAction(addEndSnapTypeAction)
 
         msg = QadMsg.translate("DSettings_Dialog", "Middle point")
@@ -953,7 +953,7 @@ class QadGetPoint(QgsMapTool):
             addMidSnapTypeAction = QAction(msg, popupMenu)
         else:
             addMidSnapTypeAction = QAction(icon, msg, popupMenu)
-        QObject.connect(addMidSnapTypeAction, SIGNAL("triggered()"), self.addMidSnapTypeByPopupMenu)
+        addMidSnapTypeAction.triggered.connect(self.addMidSnapTypeByPopupMenu)
         popupMenu.addAction(addMidSnapTypeAction)
 
         msg = QadMsg.translate("DSettings_Dialog", "Intersection")
@@ -962,7 +962,7 @@ class QadGetPoint(QgsMapTool):
             addIntSnapTypeAction = QAction(msg, popupMenu)
         else:
             addIntSnapTypeAction = QAction(icon, msg, popupMenu)
-        QObject.connect(addIntSnapTypeAction, SIGNAL("triggered()"), self.addIntSnapTypeByPopupMenu)
+        addIntSnapTypeAction.triggered.connect(self.addIntSnapTypeByPopupMenu)
         popupMenu.addAction(addIntSnapTypeAction)
 
         msg = QadMsg.translate("DSettings_Dialog", "Intersection on extension")
@@ -971,7 +971,7 @@ class QadGetPoint(QgsMapTool):
             addExtIntSnapTypeAction = QAction(msg, popupMenu)
         else:
             addExtIntSnapTypeAction = QAction(icon, msg, popupMenu)
-        QObject.connect(addExtIntSnapTypeAction, SIGNAL("triggered()"), self.addExtIntSnapTypeByPopupMenu)
+            addExtIntSnapTypeAction.triggered.connect(self.addExtIntSnapTypeByPopupMenu)
         popupMenu.addAction(addExtIntSnapTypeAction)
 
         msg = QadMsg.translate("DSettings_Dialog", "Extend")
@@ -980,7 +980,7 @@ class QadGetPoint(QgsMapTool):
             addExtSnapTypeAction = QAction(msg, popupMenu)
         else:
             addExtSnapTypeAction = QAction(icon, msg, popupMenu)
-        QObject.connect(addExtSnapTypeAction, SIGNAL("triggered()"), self.addExtSnapTypeByPopupMenu)
+        addExtSnapTypeAction.triggered.connect(self.addExtSnapTypeByPopupMenu)
         popupMenu.addAction(addExtSnapTypeAction)
 
         popupMenu.addSeparator()
@@ -991,7 +991,7 @@ class QadGetPoint(QgsMapTool):
             addCenSnapTypeAction = QAction(msg, popupMenu)
         else:
             addCenSnapTypeAction = QAction(icon, msg, popupMenu)
-        QObject.connect(addCenSnapTypeAction, SIGNAL("triggered()"), self.addCenSnapTypeByPopupMenu)
+        addCenSnapTypeAction.triggered.connect(self.addCenSnapTypeByPopupMenu)
         popupMenu.addAction(addCenSnapTypeAction)
 
         msg = QadMsg.translate("DSettings_Dialog", "Quadrant")
@@ -1000,7 +1000,7 @@ class QadGetPoint(QgsMapTool):
             addQuaSnapTypeAction = QAction(msg, popupMenu)
         else:
             addQuaSnapTypeAction = QAction(icon, msg, popupMenu)
-        QObject.connect(addQuaSnapTypeAction, SIGNAL("triggered()"), self.addQuaSnapTypeByPopupMenu)
+        addQuaSnapTypeAction.triggered.connect(self.addQuaSnapTypeByPopupMenu)
         popupMenu.addAction(addQuaSnapTypeAction)
 
         msg = QadMsg.translate("DSettings_Dialog", "Tangent")
@@ -1009,7 +1009,7 @@ class QadGetPoint(QgsMapTool):
             addTanSnapTypeAction = QAction(msg, popupMenu)
         else:
             addTanSnapTypeAction = QAction(icon, msg, popupMenu)
-        QObject.connect(addTanSnapTypeAction, SIGNAL("triggered()"), self.addTanSnapTypeByPopupMenu)
+        addTanSnapTypeAction.triggered.connect(self.addTanSnapTypeByPopupMenu)
         popupMenu.addAction(addTanSnapTypeAction)
 
         popupMenu.addSeparator()
@@ -1020,7 +1020,7 @@ class QadGetPoint(QgsMapTool):
             addPerSnapTypeAction = QAction(msg, popupMenu)
         else:
             addPerSnapTypeAction = QAction(icon, msg, popupMenu)
-        QObject.connect(addPerSnapTypeAction, SIGNAL("triggered()"), self.addPerSnapTypeByPopupMenu)
+        addPerSnapTypeAction.triggered.connect(self.addPerSnapTypeByPopupMenu)
         popupMenu.addAction(addPerSnapTypeAction)
 
         msg = QadMsg.translate("DSettings_Dialog", "Parallel")
@@ -1029,7 +1029,7 @@ class QadGetPoint(QgsMapTool):
             addParSnapTypeAction = QAction(msg, popupMenu)
         else:
             addParSnapTypeAction = QAction(icon, msg, popupMenu)
-        QObject.connect(addParSnapTypeAction, SIGNAL("triggered()"), self.addParSnapTypeByPopupMenu)
+        addParSnapTypeAction.triggered.connect(self.addParSnapTypeByPopupMenu)
         popupMenu.addAction(addParSnapTypeAction)
 
         msg = QadMsg.translate("DSettings_Dialog", "Node")
@@ -1038,7 +1038,7 @@ class QadGetPoint(QgsMapTool):
             addNodSnapTypeAction = QAction(msg, popupMenu)
         else:
             addNodSnapTypeAction = QAction(icon, msg, popupMenu)
-        QObject.connect(addNodSnapTypeAction, SIGNAL("triggered()"), self.addNodSnapTypeByPopupMenu)
+        addNodSnapTypeAction.triggered.connect(self.addNodSnapTypeByPopupMenu)
         popupMenu.addAction(addNodSnapTypeAction)
 
         msg = QadMsg.translate("DSettings_Dialog", "Near")
@@ -1047,7 +1047,7 @@ class QadGetPoint(QgsMapTool):
             addNeaSnapTypeAction = QAction(msg, popupMenu)
         else:
             addNeaSnapTypeAction = QAction(icon, msg, popupMenu)
-        QObject.connect(addNeaSnapTypeAction, SIGNAL("triggered()"), self.addNeaSnapTypeByPopupMenu)
+        addNeaSnapTypeAction.triggered.connect(self.addNeaSnapTypeByPopupMenu)
         popupMenu.addAction(addNeaSnapTypeAction)
 
         msg = QadMsg.translate("DSettings_Dialog", "Progressive")
@@ -1056,7 +1056,7 @@ class QadGetPoint(QgsMapTool):
             addPrSnapTypeAction = QAction(msg, popupMenu)
         else:
             addPrSnapTypeAction = QAction(icon, msg, popupMenu)
-        QObject.connect(addPrSnapTypeAction, SIGNAL("triggered()"), self.addPrSnapTypeByPopupMenu)
+        addPrSnapTypeAction.triggered.connect(self.addPrSnapTypeByPopupMenu)
         popupMenu.addAction(addPrSnapTypeAction)
 
         msg = QadMsg.translate("DSettings_Dialog", "None")
@@ -1065,7 +1065,7 @@ class QadGetPoint(QgsMapTool):
             setSnapTypeToDisableAction = QAction(msg, popupMenu)
         else:
             setSnapTypeToDisableAction = QAction(icon, msg, popupMenu)
-        QObject.connect(setSnapTypeToDisableAction, SIGNAL("triggered()"), self.setSnapTypeToDisableByPopupMenu)
+        setSnapTypeToDisableAction.triggered.connect(self.setSnapTypeToDisableByPopupMenu)
         popupMenu.addAction(setSnapTypeToDisableAction)
 
         popupMenu.addSeparator()
@@ -1076,7 +1076,7 @@ class QadGetPoint(QgsMapTool):
             DSettingsAction = QAction(msg, popupMenu)
         else:
             DSettingsAction = QAction(icon, msg, popupMenu)
-        QObject.connect(DSettingsAction, SIGNAL("triggered()"), self.showDSettingsByPopUpMenu)
+        DSettingsAction.triggered.connect(self.showDSettingsByPopUpMenu)
         popupMenu.addAction(DSettingsAction)
 
         popupMenu.popup(self.canvas.mapToGlobal(pos))

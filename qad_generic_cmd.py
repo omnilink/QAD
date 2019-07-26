@@ -313,7 +313,7 @@ class QadContextualMenuClass(QMenu):
         for connection in self.connections:
             action = connection[0]
             slot = connection[1]
-            QObject.disconnect(action, SIGNAL("triggered()"), slot)
+            action.trigged.disconnect(slot)
         del self.connections[:]
 
     def initActions(self, inputType, keyWords):
@@ -367,7 +367,7 @@ class QadContextualMenuClass(QMenu):
         for connection in self.connections:
             action = connection[0]
             slot = connection[1]
-            action.triggered = slot
+            action.triggered.connect(slot)
 
     def enterActionByContextualMenu(self):
         self.plugIn.showEvaluateMsg(None)
@@ -399,7 +399,7 @@ class QadOsnapContextualMenuClass(QMenu):
         for connection in self.connections:
             action = connection[0]
             slot = connection[1]
-            QObject.disconnect(action, SIGNAL("triggered()"), slot)
+            action.triggered.disconnect(slot)
         del self.connections[:]
 
     def initActions(self):
@@ -559,7 +559,7 @@ class QadOsnapContextualMenuClass(QMenu):
         for connection in self.connections:
             action = connection[0]
             slot = connection[1]
-            action.triggered = slot
+            action.triggered.connect(slot)
 
     # ============================================================================
     # addSnapTypeByPopupMenu
