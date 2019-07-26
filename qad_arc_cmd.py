@@ -52,7 +52,7 @@ class QadARCCommandClass(QadCommandClass):
         return "ARC"
 
     def connectQAction(self, action):
-        action.triggered = self.plugIn.runARCCommand
+        action.triggered.connect(self.plugIn.runARCCommand)
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/arc.png")
