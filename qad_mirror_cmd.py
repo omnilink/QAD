@@ -53,7 +53,7 @@ class QadMIRRORCommandClass(QadCommandClass):
         return "MIRROR"
 
     def connectQAction(self, action):
-        action.triggered = self.plugIn.runMIRRORCommand
+        action.triggered.connect(self.plugIn.runMIRRORCommand)
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/mirror.png")

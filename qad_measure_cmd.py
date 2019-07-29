@@ -63,7 +63,7 @@ class QadMEASURECommandClass(QadCommandClass):
         return "MEASURE"
 
     def connectQAction(self, action):
-        action.triggered = self.plugIn.runMEASURECommand
+        action.triggered.connect(self.plugIn.runMEASURECommand)
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/measure.png")

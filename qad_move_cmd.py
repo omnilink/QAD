@@ -53,7 +53,7 @@ class QadMOVECommandClass(QadCommandClass):
         return "MOVE"
 
     def connectQAction(self, action):
-        action.triggered = self.plugIn.runMOVECommand
+        action.triggered.connect(self.plugIn.runMOVECommand)
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/move.png")
