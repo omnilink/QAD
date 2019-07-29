@@ -54,7 +54,7 @@ class QadJOINCommandClass(QadCommandClass):
         return "JOIN"
 
     def connectQAction(self, action):
-        action.triggered = self.plugIn.runJOINCommand
+        action.triggered.connect(self.plugIn.runJOINCommand)
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/join.png")
@@ -409,7 +409,7 @@ class QadDISJOINCommandClass(QadCommandClass):
         return "DISJOIN"
 
     def connectQAction(self, action):
-        action.triggered = self.plugIn.runDISJOINCommand
+        action.triggered.connect(self.plugIn.runDISJOINCommand)
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/disjoin.png")

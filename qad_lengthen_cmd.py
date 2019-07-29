@@ -57,7 +57,7 @@ class QadLENGTHENCommandClass(QadCommandClass):
         return "LENGTHEN"
 
     def connectQAction(self, action):
-        action.triggered = self.plugIn.runLENGTHENCommand
+        action.triggered.connect(self.plugIn.runLENGTHENCommand)
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/lengthen.png")

@@ -345,13 +345,13 @@ class QadMapTool(QgsMapTool):
                     msg = QadMsg.translate("Popup_menu_grip_window", "Stretch")
                     action = QAction(msg, popupMenu)
                     f = lambda: self.runCmdFromPopupMenuOnGrip(QadVirtualGripCommandsEnum.STRECTH, gripPoint)
-                    QObject.connect(action, SIGNAL("triggered()"), f)
+                    action.triggered.connect(f)
                     popupMenu.addAction(action)
 
                     msg = QadMsg.translate("Popup_menu_grip_window", "Lengthen")
                     action = QAction(msg, popupMenu)
                     f = lambda: self.runCmdFromPopupMenuOnGrip(QadVirtualGripCommandsEnum.LENGTHEN, gripPoint)
-                    QObject.connect(action, SIGNAL("triggered()"), f)
+                    action.triggered.connect(f)
                     popupMenu.addAction(action)
                 # se punto medio
                 elif gripPoint.isIntersecting(entity.qadGeom.getMiddlePt()):
@@ -359,19 +359,19 @@ class QadMapTool(QgsMapTool):
                     msg = QadMsg.translate("Popup_menu_grip_window", "Stretch")
                     action = QAction(msg, popupMenu)
                     f = lambda: self.runCmdFromPopupMenuOnGrip(QadVirtualGripCommandsEnum.STRECTH, gripPoint)
-                    QObject.connect(action, SIGNAL("triggered()"), f)
+                    action.triggered.connect(f)
                     popupMenu.addAction(action)
 
                     msg = QadMsg.translate("Popup_menu_grip_window", "Radius")
                     action = QAction(msg, popupMenu)
                     f = lambda: self.runCmdFromPopupMenuOnGrip(QadVirtualGripCommandsEnum.CHANGE_RADIUS, gripPoint)
-                    QObject.connect(action, SIGNAL("triggered()"), f)
+                    action.triggered.connect(f)
                     popupMenu.addAction(action)
 
                     msg = QadMsg.translate("Popup_menu_grip_window", "Convert to line")
                     action = QAction(msg, popupMenu)
                     f = lambda: self.runCmdFromPopupMenuOnGrip(QadVirtualGripCommandsEnum.ARC_TO_LINE, gripPoint)
-                    QObject.connect(action, SIGNAL("triggered()"), f)
+                    action.triggered.connect(f)
                     popupMenu.addAction(action)
 
             elif entityType == QadEntityGeomTypeEnum.LINESTRING:
@@ -387,7 +387,7 @@ class QadMapTool(QgsMapTool):
                         msg = QadMsg.translate("Popup_menu_grip_window", "Stretch vertex")
                         action = QAction(msg, popupMenu)
                         f = lambda: self.runCmdFromPopupMenuOnGrip(QadVirtualGripCommandsEnum.STRECTH, gripPoint)
-                        QObject.connect(action, SIGNAL("triggered()"), f)
+                        action.triggered.connect(f)
                         popupMenu.addAction(action)
 
                         # punto iniziale
@@ -395,20 +395,20 @@ class QadMapTool(QgsMapTool):
                             msg = QadMsg.translate("Popup_menu_grip_window", "Lengthen")
                             action = QAction(msg, popupMenu)
                             f = lambda: self.runCmdFromPopupMenuOnGrip(QadVirtualGripCommandsEnum.LENGTHEN, gripPoint)
-                            QObject.connect(action, SIGNAL("triggered()"), f)
+                            action.triggered.connect(f)
                             popupMenu.addAction(action)
 
                         msg = QadMsg.translate("Popup_menu_grip_window", "Add vertex")
                         action = QAction(msg, popupMenu)
                         f = lambda: self.runCmdFromPopupMenuOnGrip(QadVirtualGripCommandsEnum.ADD_VERTEX, gripPoint)
-                        QObject.connect(action, SIGNAL("triggered()"), f)
+                        action.triggered.connect(f)
                         popupMenu.addAction(action)
 
                         msg = QadMsg.translate("Popup_menu_grip_window", "Add vertex before")
                         action = QAction(msg, popupMenu)
                         f = lambda: self.runCmdFromPopupMenuOnGrip(QadVirtualGripCommandsEnum.ADD_VERTEX_BEFORE,
                                                                    gripPoint)
-                        QObject.connect(action, SIGNAL("triggered()"), f)
+                        action.triggered.connect(f)
                         popupMenu.addAction(action)
                         break
 
@@ -418,20 +418,20 @@ class QadMapTool(QgsMapTool):
                         msg = QadMsg.translate("Popup_menu_grip_window", "Stretch")
                         action = QAction(msg, popupMenu)
                         f = lambda: self.runCmdFromPopupMenuOnGrip(QadVirtualGripCommandsEnum.STRECTH, gripPoint)
-                        QObject.connect(action, SIGNAL("triggered()"), f)
+                        action.triggered.connect(f)
                         popupMenu.addAction(action)
 
                         msg = QadMsg.translate("Popup_menu_grip_window", "Add vertex")
                         action = QAction(msg, popupMenu)
                         f = lambda: self.runCmdFromPopupMenuOnGrip(QadVirtualGripCommandsEnum.ADD_VERTEX, gripPoint)
-                        QObject.connect(action, SIGNAL("triggered()"), f)
+                        action.triggered.connect(f)
                         popupMenu.addAction(action)
 
                         msg = QadMsg.translate("Popup_menu_grip_window", "Add vertex before")
                         action = QAction(msg, popupMenu)
                         f = lambda: self.runCmdFromPopupMenuOnGrip(QadVirtualGripCommandsEnum.ADD_VERTEX_BEFORE,
                                                                    gripPoint)
-                        QObject.connect(action, SIGNAL("triggered()"), f)
+                        action.triggered.connect(f)
                         popupMenu.addAction(action)
 
                         if linearObject.isSegment():  # linea
@@ -444,7 +444,7 @@ class QadMapTool(QgsMapTool):
                             action = QAction(msg, popupMenu)
                             f = lambda: self.runCmdFromPopupMenuOnGrip(QadVirtualGripCommandsEnum.ARC_TO_LINE,
                                                                        gripPoint)
-                        QObject.connect(action, SIGNAL("triggered()"), f)
+                        action.triggered.connect(f)
                         popupMenu.addAction(action)
                         break
 
@@ -458,26 +458,26 @@ class QadMapTool(QgsMapTool):
                         msg = QadMsg.translate("Popup_menu_grip_window", "Stretch vertex")
                         action = QAction(msg, popupMenu)
                         f = lambda: self.runCmdFromPopupMenuOnGrip(QadVirtualGripCommandsEnum.STRECTH, gripPoint)
-                        QObject.connect(action, SIGNAL("triggered()"), f)
+                        action.triggered.connect(f)
                         popupMenu.addAction(action)
 
                         msg = QadMsg.translate("Popup_menu_grip_window", "Lengthen")
                         action = QAction(msg, popupMenu)
                         f = lambda: self.runCmdFromPopupMenuOnGrip(QadVirtualGripCommandsEnum.LENGTHEN, gripPoint)
-                        QObject.connect(action, SIGNAL("triggered()"), f)
+                        action.triggered.connect(f)
                         popupMenu.addAction(action)
 
                         msg = QadMsg.translate("Popup_menu_grip_window", "Add vertex")
                         action = QAction(msg, popupMenu)
                         f = lambda: self.runCmdFromPopupMenuOnGrip(QadVirtualGripCommandsEnum.ADD_VERTEX, gripPoint)
-                        QObject.connect(action, SIGNAL("triggered()"), f)
+                        action.triggered.connect(f)
                         popupMenu.addAction(action)
 
                         msg = QadMsg.translate("Popup_menu_grip_window", "Add vertex before")
                         action = QAction(msg, popupMenu)
                         f = lambda: self.runCmdFromPopupMenuOnGrip(QadVirtualGripCommandsEnum.ADD_VERTEX_BEFORE,
                                                                    gripPoint)
-                        QObject.connect(action, SIGNAL("triggered()"), f)
+                        action.triggered.connect(f)
                         popupMenu.addAction(action)
 
                 if isClosed == False:  # polyline
@@ -486,7 +486,7 @@ class QadMapTool(QgsMapTool):
                         msg = QadMsg.translate("Popup_menu_grip_window", "Remove vertex")
                         action = QAction(msg, popupMenu)
                         f = lambda: self.runCmdFromPopupMenuOnGrip(QadVirtualGripCommandsEnum.REMOVE_VERTEX, gripPoint)
-                        QObject.connect(action, SIGNAL("triggered()"), f)
+                        action.triggered.connect(f)
                         popupMenu.addAction(action)
                 else:  # polygon
                     # ci devono essere almeno 4 parti
@@ -494,7 +494,7 @@ class QadMapTool(QgsMapTool):
                         msg = QadMsg.translate("Popup_menu_grip_window", "Remove vertex")
                         action = QAction(msg, popupMenu)
                         f = lambda: self.runCmdFromPopupMenuOnGrip(QadVirtualGripCommandsEnum.REMOVE_VERTEX, gripPoint)
-                        QObject.connect(action, SIGNAL("triggered()"), f)
+                        action.triggered.connect(f)
                         popupMenu.addAction(action)
 
         if found:  # menu non vuoto
