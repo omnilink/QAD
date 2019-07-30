@@ -54,7 +54,7 @@ class QadSCALECommandClass(QadCommandClass):
         return "SCALE"
 
     def connectQAction(self, action):
-        action.triggered = self.plugIn.runSCALECommand
+        action.triggered.connect(self.plugIn.runSCALECommand)
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/scale.png")

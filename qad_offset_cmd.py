@@ -53,7 +53,7 @@ class QadOFFSETCommandClass(QadCommandClass):
         return "OFFSET"
 
     def connectQAction(self, action):
-        action.triggered = self.plugIn.runOFFSETCommand
+        action.triggered.connect(self.plugIn.runOFFSETCommand)
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/offset.png")

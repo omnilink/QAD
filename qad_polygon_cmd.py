@@ -49,7 +49,7 @@ class QadPOLYGONCommandClass(QadCommandClass):
         return "POLYGON"
 
     def connectQAction(self, action):
-        action.triggered = self.plugIn.runPOLYGONCommand
+        action.triggered.connect(self.plugIn.runPOLYGONCommand)
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/polygon.png")

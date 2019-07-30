@@ -54,7 +54,7 @@ class QadROTATECommandClass(QadCommandClass):
         return "ROTATE"
 
     def connectQAction(self, action):
-        action.triggered = self.plugIn.runROTATECommand
+        action.triggered.connect(self.plugIn.runROTATECommand)
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/rotate.png")

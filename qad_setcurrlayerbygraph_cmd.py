@@ -51,9 +51,7 @@ class QadSETCURRLAYERBYGRAPHCommandClass(QadCommandClass):
         return "SETCURRLAYERBYGRAPH"
 
     def connectQAction(self, action):
-        action.triggered = self.plugIn.runSETCURRUPDATEABLELAYERBYGRAPHCommand
-        # TODO: Old signal binding commented out.
-        # QObject.connect(action, SIGNAL("triggered()"), self.plugIn.runSETCURRLAYERBYGRAPHCommand)
+        action.triggered.connect(self.plugIn.runSETCURRUPDATEABLELAYERBYGRAPHCommand)
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/setcurrlayerbygraph.png")
@@ -140,9 +138,7 @@ class QadSETCURRUPDATEABLELAYERBYGRAPHCommandClass(QadCommandClass):
         return "SETCURRUPDATEABLELAYERBYGRAPH"
 
     def connectQAction(self, action):
-        action.triggered = self.plugIn.runSETCURRUPDATEABLELAYERBYGRAPHCommand
-        # TODO: Old signal binding commented out.
-        # QObject.connect(action, SIGNAL("triggered()"), self.plugIn.runSETCURRUPDATEABLELAYERBYGRAPHCommand)
+        action.triggered.connect(self.plugIn.runSETCURRUPDATEABLELAYERBYGRAPHCommand)
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/setcurrupdateablelayerbygraph.png")

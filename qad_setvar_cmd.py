@@ -46,7 +46,7 @@ class QadSETVARCommandClass(QadCommandClass):
         return "SETVAR"
 
     def connectQAction(self, action):
-        QObject.connect(action, SIGNAL("triggered()"), self.plugIn.runSETVARCommand)
+        action.triggered.connect(self.plugIn.runSETVARCommand)
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/variable.png")
