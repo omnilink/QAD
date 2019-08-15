@@ -122,7 +122,8 @@ class QadWindowColorDialog(QDialog, QObject, Ui_WindowColor_Dialog):
         self.buttonColor = QgsColorButtonV2(self.Button_ColorDummy.parent())
         self.buttonColor.setGeometry(self.Button_ColorDummy.geometry())
         self.buttonColor.setObjectName("buttonColor")
-        QObject.connect(self.buttonColor, SIGNAL("colorChanged(QColor)"), self.colorChanged)
+        self.buttonColor.colorChanged.connect(self.colorChanged)
+#        QObject.connect(self.buttonColor, SIGNAL("colorChanged(QColor)"), self.colorChanged)
 
         # aggiungo il QWidget chiamato QadPreview
         # che eredita la posizione di widget_Preview (che viene nascosto)

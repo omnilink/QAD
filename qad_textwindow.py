@@ -390,7 +390,7 @@ class QadEdit(QTextEdit):
         self.set_keyWordColors()
 
         self.setMouseTracking(True)
-        self.textChanged = self.onTextChanged
+        self.textChanged.connect(self.onTextChanged)
 
         self.timerForCmdSuggestWindow = QTimer()
         self.timerForCmdSuggestWindow.setSingleShot(True)

@@ -46,7 +46,7 @@ class QadUNDOCommandClass(QadCommandClass):
         return "UNDO"
 
     def connectQAction(self, action):
-        action.triggered = self.plugIn.runUNDOCommand
+        action.triggered.connect(self.plugIn.runUNDOCommand)
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/undo.png")
@@ -178,7 +178,7 @@ class QadREDOCommandClass(QadCommandClass):
         return "REDO"
 
     def connectQAction(self, action):
-        action.triggered = self.plugIn.runREDOCommand
+        action.triggered.connect(self.plugIn.runREDOCommand)
 
     def getIcon(self):
         return QIcon(":/plugins/qad/icons/redo.png")
